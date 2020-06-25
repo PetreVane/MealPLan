@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+// This is for trying things
 struct DetailedView: View {
     var body: some View {
         Text("This is a detailed view!")

@@ -13,6 +13,7 @@ struct BreakfastScreen: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
+                Spacer(minLength: 15)
                 GenericScreen(title: "Breakfast", firstRow: ("1 Protein", "Type your protein intake here"), secondRow: ("1 Breakfast grain", "Type your grain intake here"), thirdRow: ("1 Fruit", "Type your fruit intake here"))
                 
                 Spacer(minLength: 50)

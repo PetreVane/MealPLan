@@ -25,13 +25,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
         coordinator = AppCoordinator()
-//        let contentView = ContentView().environment(\.managedObjectContext, context)
-        guard coordinator != nil else { print("No coordinator"); return }
-         let contentView = coordinator!.determineAppFlow()
+        let rootView = MainScreen().environment(\.managedObjectContext, context)
+//        guard coordinator != nil else { print("No coordinator"); return }
+//         let contentView = coordinator!.determineAppFlow()
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
+            window.rootViewController = UIHostingController(rootView: rootView)
             self.window = window
             window.makeKeyAndVisible()
         }
