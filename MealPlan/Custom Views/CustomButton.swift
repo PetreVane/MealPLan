@@ -19,13 +19,7 @@ struct CustomButton: View {
         Button(action: {
             self.action()
         }) {
-            Text(title)
-                .fontWeight(.ultraLight)
-                .font(.custom(customFont, size: 15))
-                .foregroundColor(.gray)
-                .padding(EdgeInsets(top: 10, leading: 75, bottom: 10, trailing: 75))
-                .padding()
-                .border(Color.gray, width: 1)
+            CustomTextView(title: title)
         }
     }
 }
@@ -37,3 +31,4 @@ struct CustomButton_Previews: PreviewProvider {
         }
     }
 }
+

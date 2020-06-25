@@ -26,6 +26,7 @@
 		0B4A617F24A49B27007BC69A /* BreakfastScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A617924A49B27007BC69A /* BreakfastScreen.swift */; };
 		0B4A618124A49B3B007BC69A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A618024A49B3B007BC69A /* AppCoordinator.swift */; };
 		0B4A618324A4D080007BC69A /* DetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A618224A4D080007BC69A /* DetailedView.swift */; };
+		0B4A618524A4DB29007BC69A /* CustomText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A618424A4DB29007BC69A /* CustomText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		0B4A617924A49B27007BC69A /* BreakfastScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakfastScreen.swift; sourceTree = "<group>"; };
 		0B4A618024A49B3B007BC69A /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		0B4A618224A4D080007BC69A /* DetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedView.swift; sourceTree = "<group>"; };
+		0B4A618424A4DB29007BC69A /* CustomText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				0B4A617024A49B11007BC69A /* GenericScreen.swift */,
 				0B4A616C24A49AFA007BC69A /* CustomButton.swift */,
 				0B4A616E24A49B06007BC69A /* CustomTextField.swift */,
+				0B4A618424A4DB29007BC69A /* CustomText.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -127,11 +130,11 @@
 			children = (
 				0B4A617924A49B27007BC69A /* BreakfastScreen.swift */,
 				0B4A617824A49B27007BC69A /* ChallengeScreen.swift */,
+				0B4A618224A4D080007BC69A /* DetailedView.swift */,
 				0B4A617424A49B27007BC69A /* DinnerScreen.swift */,
 				0B4A617624A49B27007BC69A /* LogOutScreen.swift */,
 				0B4A617524A49B27007BC69A /* LunchScreen.swift */,
 				0B4A617724A49B27007BC69A /* MainScreen.swift */,
-				0B4A618224A4D080007BC69A /* DetailedView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				0B4A615224A49A31007BC69A /* AppDelegate.swift in Sources */,
 				0B4A617F24A49B27007BC69A /* BreakfastScreen.swift in Sources */,
 				0B4A617B24A49B27007BC69A /* LunchScreen.swift in Sources */,
+				0B4A618524A4DB29007BC69A /* CustomText.swift in Sources */,
 				0B4A616F24A49B06007BC69A /* CustomTextField.swift in Sources */,
 				0B4A615924A49A31007BC69A /* ContentView.swift in Sources */,
 				0B4A617224A49B11007BC69A /* GenericScreen.swift in Sources */,
