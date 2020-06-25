@@ -25,6 +25,7 @@
 		0B4A617E24A49B27007BC69A /* ChallengeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A617824A49B27007BC69A /* ChallengeScreen.swift */; };
 		0B4A617F24A49B27007BC69A /* BreakfastScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A617924A49B27007BC69A /* BreakfastScreen.swift */; };
 		0B4A618124A49B3B007BC69A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A618024A49B3B007BC69A /* AppCoordinator.swift */; };
+		0B4A618324A4D080007BC69A /* DetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A618224A4D080007BC69A /* DetailedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		0B4A617824A49B27007BC69A /* ChallengeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeScreen.swift; sourceTree = "<group>"; };
 		0B4A617924A49B27007BC69A /* BreakfastScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakfastScreen.swift; sourceTree = "<group>"; };
 		0B4A618024A49B3B007BC69A /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		0B4A618224A4D080007BC69A /* DetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,12 +82,12 @@
 		0B4A615024A49A31007BC69A /* MealPlan */ = {
 			isa = PBXGroup;
 			children = (
-				0B4A616A24A49A6C007BC69A /* Screens */,
-				0B4A616924A49A61007BC69A /* Coordinators */,
-				0B4A616824A49A4E007BC69A /* Custom Views */,
 				0B4A615124A49A31007BC69A /* AppDelegate.swift */,
 				0B4A615324A49A31007BC69A /* SceneDelegate.swift */,
 				0B4A615824A49A31007BC69A /* ContentView.swift */,
+				0B4A616924A49A61007BC69A /* Coordinators */,
+				0B4A616824A49A4E007BC69A /* Custom Views */,
+				0B4A616A24A49A6C007BC69A /* Screens */,
 				0B4A616B24A49A88007BC69A /* Resources */,
 				0B4A615524A49A31007BC69A /* MealPlan.xcdatamodeld */,
 				0B4A615C24A49A35007BC69A /* Preview Content */,
@@ -129,6 +131,7 @@
 				0B4A617624A49B27007BC69A /* LogOutScreen.swift */,
 				0B4A617524A49B27007BC69A /* LunchScreen.swift */,
 				0B4A617724A49B27007BC69A /* MainScreen.swift */,
+				0B4A618224A4D080007BC69A /* DetailedView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				0B4A617D24A49B27007BC69A /* MainScreen.swift in Sources */,
 				0B4A617A24A49B27007BC69A /* DinnerScreen.swift in Sources */,
 				0B4A615724A49A31007BC69A /* MealPlan.xcdatamodeld in Sources */,
+				0B4A618324A4D080007BC69A /* DetailedView.swift in Sources */,
 				0B4A617C24A49B27007BC69A /* LogOutScreen.swift in Sources */,
 				0B4A617324A49B11007BC69A /* CircleImage.swift in Sources */,
 				0B4A615224A49A31007BC69A /* AppDelegate.swift in Sources */,
