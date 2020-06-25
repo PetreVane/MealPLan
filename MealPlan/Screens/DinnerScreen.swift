@@ -1,6 +1,6 @@
 //
 //  DinnerScreen.swift
-//  Tracky
+//  MealPlan
 //
 //  Created by Petre Vane on 17/06/2020.
 //  Copyright © 2020 Petre Vane. All rights reserved.
