@@ -11,7 +11,7 @@ import SwiftUI
 struct BreakfastScreen: View {
     var customFont = "Avenir Next"
     var body: some View {
-        ScrollView {
+        ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 GenericScreen(title: "Breakfast", firstRow: ("1 Protein", "Type your protein intake here"), secondRow: ("1 Breakfast grain", "Type your grain intake here"), thirdRow: ("1 Fruit", "Type your fruit intake here"))
                 

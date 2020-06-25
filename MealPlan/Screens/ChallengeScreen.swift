@@ -30,7 +30,8 @@ struct ChallengeScreen: View {
                         .border(Color.black)
                 }
             }
-        }.navigationBarTitle("Navigation")
+        }
+        .navigationBarHidden(true)
         .labelsHidden()
     }
     

@@ -12,7 +12,7 @@ struct DinnerScreen: View {
 
     var customFont = "Avenir Next"
     var body: some View {
-        ScrollView {
+        ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 GenericScreen(title: "Dinner", firstRow: ("1 Protein", "Type your protein intake here"), secondRow: ("6 oz. Vegetables", "Type your Vegetables intake here"), thirdRow: ("Type your Salad intake here", "Type your Salad intake here"))
                 
