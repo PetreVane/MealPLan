@@ -10,29 +10,25 @@ import SwiftUI
 
 
 struct ChallengeScreen: View {
+    
+    @State var showingDetails = false
 
     var body: some View {
         
-        NavigationView {
-            VStack(alignment: .center, spacing: 150) {
-                
-                Text("My meal plan")
-                    .font(.custom("Avenir Next", size: 55))
-                    .fontWeight(.ultraLight)
-                    .lineLimit(1)
-                
-                NavigationLink(destination: DetailedView()) {
-                    Text("Accept Challenge")
-                        .font(.custom("Avenir Next", size: 25))
-                        .fontWeight(.thin)
-                        .foregroundColor(.black)
-                        .padding()
-                        .border(Color.black)
-                }
-            }
+        VStack(alignment: .center, spacing: 150) {
+                    
+            Text("My meal plan")
+                .font(.custom("Avenir Next", size: 55))
+                .fontWeight(.ultraLight)
+                .lineLimit(1)
+                        
+            Text("Accept Challenge")
+                .font(.custom("Avenir Next", size: 25))
+                .fontWeight(.thin)
+                .foregroundColor(.black)
+                .padding()
+                .border(Color.black)
         }
-        .navigationBarHidden(true)
-        .labelsHidden()
     }
     
     func instantiateTabBar() {
@@ -45,3 +41,12 @@ struct LaunchScreen_Previews: PreviewProvider {
         return ChallengeScreen()
     }
 }
+
+
+//            Button(action: {
+//                self.showingDetails.toggle()
+//            }) {
+//                CustomTextView(title: "Accept challenge")
+//            }.sheet(isPresented: $showingDetails) {
+//                MainScreen()
+//            }
