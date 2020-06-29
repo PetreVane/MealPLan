@@ -71,12 +71,12 @@ struct TopStackView: View {
     }
     
     var body: some View {
-        VStack {
-            Spacer(minLength: 15)
+        VStack(alignment: .center, spacing: 10) {
+            Spacer(minLength: 10)
             Text("Today is \(dateFormatter.string(from: date))")
                 .font(.custom(customFont, size: 20))
                 .fontWeight(.ultraLight)
-                .padding(.all, -25)
+                .padding()
                 .border(Color.black, width: 0.3)
             
             Text("Hi beatiful")
@@ -96,8 +96,10 @@ struct MainSubView: View {
             
             VStack(alignment: .center, spacing: 25) {
                 // Date and hello message
-                TopStackView()
+                Spacer(minLength: 10)
                 
+                TopStackView()
+    
                 // Weight textfield & button
                 HStack {
                     CustomTextField(placeholderText: "Your weight today")
