@@ -19,7 +19,7 @@ struct CustomButton: View {
         Button(action: {
             self.action()
         }) {
-            CustomTextView(title: title)
+            CustomButtonTextView(title: title)
         }
     }
 }

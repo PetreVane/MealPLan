@@ -1,5 +1,5 @@
 //
-//  Breakfast.swift
+//  FoodIntake.swift
 //  MealPlan
 //
 //  Created by Petre Vane on 29/06/2020.
@@ -9,9 +9,11 @@
 import Foundation
 
 
-struct Breakfast {
+struct FoodIntake {
     var proteins: String
     var grains: String
     var fruits: String
-    
+    var vegetables: String?
+    var salad: String?
+    var fats: String?
 }

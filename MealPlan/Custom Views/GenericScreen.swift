@@ -8,37 +8,41 @@
 
 import SwiftUI
 
+/// Generic view that initializes several CustomVStackSubview's with title and label content
 struct GenericScreen: View {
     var title: String
     var firstRow: (String, String)
     var secondRow: (String, String)
     var thirdRow: (String, String)
-    
-    var customFont = "Avenir Next"
+    var fourthRow: (String, String)?
+    var fifthRow: (String, String)?
+       
     var body: some View {
         
         VStack {
             VStack(alignment: .center, spacing: 35) {
                 Text(title)
-                    .font(.custom(customFont, size: 35))
+                    .font(.custom("Avenir Next", size: 35))
                     .fontWeight(.thin)
                     .foregroundColor(.gray)
-                Spacer()
             }
             
             CustomVStackSubview(textViewValue: firstRow.0, textFieldPlaceholderValue: firstRow.1)
             CustomVStackSubview(textViewValue: secondRow.0, textFieldPlaceholderValue: secondRow.1)
             CustomVStackSubview(textViewValue:thirdRow.0, textFieldPlaceholderValue: thirdRow.1)
+            
+            if fourthRow != nil {
+                 CustomVStackSubview(textViewValue: fourthRow?.0 ?? "nil", textFieldPlaceholderValue: fourthRow?.1 ?? "nil")
+            }
+            
+            if fifthRow != nil {
+                CustomVStackSubview(textViewValue: fifthRow?.0 ?? "nil", textFieldPlaceholderValue: fifthRow?.1 ?? "nil")
+            }
         }
     }
 }
 
-struct GenericScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        GenericScreen(title: "Breakfast", firstRow: ("1 Protein", "Type your Protein intake here"), secondRow: ("1 Breakfast grain", "Type your Grain intake here"), thirdRow: ("1 Fruit", "Type your Fruit intake here"))
-    }
-}
-
+/// Contains one filled circle (point) and one Text view
 struct CustomVStackSubview: View {
     
     var textViewValue: String
@@ -55,11 +59,18 @@ struct CustomVStackSubview: View {
                 Text(textViewValue)
                     .font(.custom(customFont, size: 25))
                     .fontWeight(.thin)
-                    .italic()
             }
             
             CustomTextField(placeholderText: textFieldPlaceholderValue)
             
         }.padding()
+    }
+}
+
+struct GenericScreen_Previews: PreviewProvider {
+    static var previews: some View {
+//        GenericScreen(title: "Testing", firstRow: ("Proteins", "Protein intakes"), secondRow: ("Grains", "Grains intake"), thirdRow: ("Vegetables", "Vegetables intake"), fourthRow: ("Salad", "Salad intake"), fifthRow: ("Fat", "Fat intake"))
+        GenericScreen(title: "Test", firstRow: ("Proteins", "Protein intakes"), secondRow: ("Grains", "Grains intakes"), thirdRow: ("Vegetables", "Vegetables intakes"), fourthRow: ("Fat", "Fat intake"), fifthRow: nil)
+
     }
 }

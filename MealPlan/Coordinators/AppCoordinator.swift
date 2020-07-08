@@ -36,7 +36,7 @@ class AppCoordinator {
         var screen: some View {
             let challengeAccepted = checkIfAccepted()
             let startingScreen = challengeAccepted ? MainScreen() : MainScreen()
-            return startingScreen
+            startingScreen
         }
         return screen
     }

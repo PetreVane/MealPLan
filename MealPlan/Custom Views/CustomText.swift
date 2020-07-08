@@ -8,17 +8,23 @@
 
 import SwiftUI
 
-struct CustomTextView: View {
+struct CustomButtonTextView: View {
 
     var title: String
     var customFont = "Avenir Next"
     var body: some View {
         Text(title)
-            .fontWeight(.ultraLight)
+            .fontWeight(.semibold)
             .font(.custom(customFont, size: 15))
             .foregroundColor(.gray)
-            .padding(EdgeInsets(top: 10, leading: 75, bottom: 10, trailing: 75))
-            .padding()
-            .border(Color.gray, width: 1)
+//            .padding(EdgeInsets(top: 10, leading: 75, bottom: 10, trailing: 75))
+//            .padding()
+//            .border(Color.gray, width: 1)
+    }
+}
+
+struct CustomText_Previews: PreviewProvider {
+    static var previews: some View {
+        CustomButtonTextView(title: "Test")
     }
 }

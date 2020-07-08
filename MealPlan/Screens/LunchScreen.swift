@@ -14,7 +14,7 @@ struct LunchScreen: View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 Spacer(minLength: 15)
-                GenericScreen(title: "Lunch", firstRow: ("1 Protein", "Type your protein intake here"), secondRow: ("6 oz. Vegetables", "Type your vegetables intake here"), thirdRow: ("1 Fruit", "Type your Fruit intake here"))
+                GenericScreen(title: "Lunch", firstRow: ("Proteins", "Type your protein intake here"), secondRow: ("Grains", "Type your grains intake here"), thirdRow: ("Vegetables", "Type your vegetables intake here"), fourthRow: ("Fruits", "Type your fruits intake here"), fifthRow: ("Fat", "Type your fats intake here"))
                 
                 Spacer(minLength: 50)
                 

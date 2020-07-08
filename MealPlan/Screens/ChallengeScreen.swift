@@ -46,7 +46,7 @@ struct LaunchScreen_Previews: PreviewProvider {
 //            Button(action: {
 //                self.showingDetails.toggle()
 //            }) {
-//                CustomTextView(title: "Accept challenge")
+//                CustomButtonTextView(title: "Accept challenge")
 //            }.sheet(isPresented: $showingDetails) {
 //                MainScreen()
 //            }

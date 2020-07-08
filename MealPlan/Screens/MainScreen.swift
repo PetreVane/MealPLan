@@ -19,7 +19,7 @@ struct MainScreen: View {
                 }.tag(0)
                 
         
-            LogOutScreen()
+            DetailedView()
                 .tabItem {
                     Image(systemName: "star.circle.fill").renderingMode(.original)
                     Text(verbatim: "Your progress")
@@ -44,18 +44,21 @@ struct BottomStack: View {
         VStack(alignment: .center, spacing: 20) {
             Button(action: {
                 self.showBreakfastScreen.toggle()
-            }) { CustomTextView(title: "Breakfast")}
-                .sheet(isPresented: $showBreakfastScreen) { BreakfastScreen() }
+            }) { CustomButtonTextView(title: "Breakfast") }
+            .sheet(isPresented: $showBreakfastScreen) { BreakfastScreen() }
+            .buttonStyle(CustomButtonStyle())
             
             Button(action: {
                 self.showLunchScreen.toggle()
-            }) { CustomTextView(title: "Lunch    ")}
-                .sheet(isPresented: $showLunchScreen) { LunchScreen() }
+            }) { CustomButtonTextView(title: "Lunch    ")}
+            .sheet(isPresented: $showLunchScreen) { LunchScreen() }
+            .buttonStyle(CustomButtonStyle())
             
             Button(action: {
                 self.showDinnerScreen.toggle()
-            }) { CustomTextView(title: "Dinner   ")}
-                .sheet(isPresented: $showDinnerScreen) { DinnerScreen() }
+            }) { CustomButtonTextView(title: "Dinner   ")}
+            .sheet(isPresented: $showDinnerScreen) { DinnerScreen() }
+            .buttonStyle(CustomButtonStyle())
         }
     }
 }
@@ -90,6 +93,7 @@ struct TopStackView: View {
 struct MainSubView: View {
     
     private var customFont = "Avenir Next"
+    @State private var isSaved: Bool = false
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -99,37 +103,28 @@ struct MainSubView: View {
                 Spacer(minLength: 10)
                 
                 TopStackView()
-    
+                
                 // Weight textfield & button
                 HStack {
                     CustomTextField(placeholderText: "Your weight today")
                         .fixedSize()
                     
-                    Button(action: { print("Saving your weight")}) {
-                        Text("Update weight")
-                            .font(.custom(customFont, size: 15))
-                            .fontWeight(.ultraLight)
-                            .cornerRadius(35)
-                            .padding(EdgeInsets(top: 6, leading: 10, bottom: 6, trailing: 10))
-                            .border(Color.gray, width: 0.5)
-                            .foregroundColor(.gray)
-                    }
+                    CustomTextField(placeholderText: "Your height today")
+                        .fixedSize()
+                    
                 }
                 
                 // Height textfield & button
                 HStack {
-                    CustomTextField(placeholderText: "Your height today")
-                        .fixedSize()
-                    
-                    Button(action: { print("Saving your height")}) {
-                        Text("Update height")
-                            .font(.custom(customFont, size: 15))
-                            .fontWeight(.ultraLight)
-                            .cornerRadius(35)
-                            .padding(EdgeInsets(top: 6, leading: 10, bottom: 6, trailing: 10))
-                            .border(Color.gray, width: 0.5)
-                            .foregroundColor(.gray)
-                    }
+                    Button(action: {
+                            self.isSaved.toggle()
+                            print("Saving your height")}) {
+                        
+                        Image(systemName: isSaved ? "checkmark.rectangle.fill" : "checkmark.rectangle")
+                                .font(.system(size: 45))
+                                .foregroundColor(isSaved ? .green : .gray)
+                        
+                    }.buttonStyle(AdditionalButtonStyle())
                 }
                 
                 // Middle textView
