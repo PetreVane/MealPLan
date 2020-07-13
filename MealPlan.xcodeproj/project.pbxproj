@@ -94,10 +94,11 @@
 				0B4A615324A49A31007BC69A /* SceneDelegate.swift */,
 				0B4A616924A49A61007BC69A /* Coordinators */,
 				0B4A616824A49A4E007BC69A /* Custom Views */,
-				0BE023F724AA401B00A535D5 /* Models */,
-				0B4A616A24A49A6C007BC69A /* Screens */,
-				0B4A616B24A49A88007BC69A /* Resources */,
 				0B4A615524A49A31007BC69A /* MealPlan.xcdatamodeld */,
+				0BE023F724AA401B00A535D5 /* Models */,
+				0B878F9124BCA8A6001495B6 /* ViewModel */,
+				0B4A616A24A49A6C007BC69A /* Views */,
+				0B4A616B24A49A88007BC69A /* Resources */,
 				0B4A615C24A49A35007BC69A /* Preview Content */,
 			);
 			path = MealPlan;
@@ -133,7 +134,7 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
-		0B4A616A24A49A6C007BC69A /* Screens */ = {
+		0B4A616A24A49A6C007BC69A /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				0B4A617824A49B27007BC69A /* ChallengeScreen.swift */,
@@ -145,7 +146,7 @@
 				0B4A618224A4D080007BC69A /* DetailedView.swift */,
 				0B754C0624ABB2B90028A6C3 /* ButtonWithCounter.swift */,
 			);
-			path = Screens;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		0B4A616B24A49A88007BC69A /* Resources */ = {
@@ -156,6 +157,13 @@
 				0B4A615F24A49A35007BC69A /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		0B878F9124BCA8A6001495B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		0BE023F724AA401B00A535D5 /* Models */ = {
