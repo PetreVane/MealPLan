@@ -10,13 +10,24 @@ import SwiftUI
 
 /// Generic view that initializes several CustomVStackSubview's with title and label content
 struct GenericScreen: View {
+    
+    
     var title: String
-    var firstRow: (String, String)
-    var secondRow: (String, String)
-    var thirdRow: (String, String)
-    var fourthRow: (String, String)?
-    var fifthRow: (String, String)?
-       
+    var firstRow: (title: String, placeholder: String)
+    var secondRow: (title: String, placeholder: String)
+    var thirdRow: (title: String, placeholder: String)
+    var fourthRow: (title: String, placeholder: String)?
+    var fifthRow: (title: String, placeholder: String)?
+
+    // Bindings
+    @Binding var firstTextField: String
+    @Binding var secondTextField: String
+    @Binding var thirdTextField: String
+    @Binding var fourthTextField: String
+    @Binding var fifthTextField: String
+   
+    
+    
     var body: some View {
         
         VStack {
@@ -27,27 +38,32 @@ struct GenericScreen: View {
                     .foregroundColor(.gray)
             }
             
-            CustomVStackSubview(textViewValue: firstRow.0, textFieldPlaceholderValue: firstRow.1)
-            CustomVStackSubview(textViewValue: secondRow.0, textFieldPlaceholderValue: secondRow.1)
-            CustomVStackSubview(textViewValue:thirdRow.0, textFieldPlaceholderValue: thirdRow.1)
+            CustomVStackSubview(textViewValue: firstRow.title, textFieldPlaceholderValue: firstRow.placeholder, textFieldValue: $firstTextField)
+            
+            CustomVStackSubview(textViewValue: secondRow.title, textFieldPlaceholderValue: secondRow.placeholder, textFieldValue: $secondTextField)
+            CustomVStackSubview(textViewValue:thirdRow.title, textFieldPlaceholderValue: thirdRow.placeholder, textFieldValue: $thirdTextField)
             
             if fourthRow != nil {
-                 CustomVStackSubview(textViewValue: fourthRow?.0 ?? "nil", textFieldPlaceholderValue: fourthRow?.1 ?? "nil")
+                CustomVStackSubview(textViewValue: fourthRow?.title ?? "nil", textFieldPlaceholderValue: fourthRow?.placeholder ?? "nil", textFieldValue: $fourthTextField)
             }
             
             if fifthRow != nil {
-                CustomVStackSubview(textViewValue: fifthRow?.0 ?? "nil", textFieldPlaceholderValue: fifthRow?.1 ?? "nil")
+                CustomVStackSubview(textViewValue: fifthRow?.title ?? "nil", textFieldPlaceholderValue: fifthRow?.placeholder ?? "nil", textFieldValue: $fifthTextField)
             }
         }
     }
+    
 }
 
 /// Contains one filled circle (point) and one Text view
 struct CustomVStackSubview: View {
     
+//    var requiredProperty: CustomVStackProtocol
     var textViewValue: String
     var textFieldPlaceholderValue: String
     var customFont = "Avenir Next"
+    @Binding var textFieldValue: String
+   
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
@@ -61,16 +77,16 @@ struct CustomVStackSubview: View {
                     .fontWeight(.thin)
             }
             
-            CustomTextField(placeholderText: textFieldPlaceholderValue)
+            CustomTextField(placeholderText: textFieldPlaceholderValue, textFieldValue: $textFieldValue)
+            
             
         }.padding()
     }
 }
 
 struct GenericScreen_Previews: PreviewProvider {
-    static var previews: some View {
-//        GenericScreen(title: "Testing", firstRow: ("Proteins", "Protein intakes"), secondRow: ("Grains", "Grains intake"), thirdRow: ("Vegetables", "Vegetables intake"), fourthRow: ("Salad", "Salad intake"), fifthRow: ("Fat", "Fat intake"))
-        GenericScreen(title: "Test", firstRow: ("Proteins", "Protein intakes"), secondRow: ("Grains", "Grains intakes"), thirdRow: ("Vegetables", "Vegetables intakes"), fourthRow: ("Fat", "Fat intake"), fifthRow: nil)
 
+    static var previews: some View {
+        GenericScreen(title: "This is the title", firstRow: ("Proteins", "Protein intakes"), secondRow: ("Grains", "Grains intake"), thirdRow: ("Vegetables", "Vegetables intake"), fourthRow: ("Salad", "Salad intake"), fifthRow: ("Fat", "Fat intake"), firstTextField: .constant(" "), secondTextField: .constant(" "), thirdTextField: .constant(" "), fourthTextField: .constant(" "), fifthTextField: .constant(" "))
     }
 }
