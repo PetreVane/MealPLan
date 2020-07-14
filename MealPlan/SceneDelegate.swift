@@ -12,7 +12,7 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    var coordinator: AppCoordinator?
+//    var coordinator: AppCoordinator?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -24,8 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
-        coordinator = AppCoordinator()
-        let rootView = MainScreen().environment(\.managedObjectContext, context)
+//        coordinator = AppCoordinator()
+        let rootView = DinnerScreen().environment(\.managedObjectContext, context)
 //        guard coordinator != nil else { print("No coordinator"); return }
 //         let contentView = coordinator!.determineAppFlow()
         // Use a UIHostingController as window root view controller.

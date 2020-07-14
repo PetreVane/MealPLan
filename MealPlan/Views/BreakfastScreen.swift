@@ -8,32 +8,38 @@
 
 import SwiftUI
 
-struct BreakfastScreen: View {
-    
-    @State private var proteins: String = ""
-    @State private var grains: String = ""
-    @State private var fruits: String = ""
-    
-    var customFont = "Avenir Next"
-    var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack {
-                Spacer(minLength: 15)
-                GenericScreen(title: "Breakfast", firstRow: ("Proteins", "Type your protein intake here"), secondRow: ("Grains", "Type your grain intake here"), thirdRow: ("Fruits", "Type your fruit intake here"))
-                
-                Spacer(minLength: 50)
-                
-                CustomButton(customFont: customFont, title: "Save breakfast") {
-                    print("Saving brakfast details now...")
-//                    CustomTextField.printInput()
-                }
-            }
-        }
-    }
-}
+//struct BreakfastScreen: View {
+//    
+//    @State private var proteins: String = ""
+//    @State private var grains: String = ""
+//    @State private var fruits: String = ""
+//    
+//    private let foodIntakeController = FoodIntakeController.sharedInstance
+//    
+//    var customFont = "Avenir Next"
+//    var body: some View {
+//        ScrollView(.vertical, showsIndicators: false) {
+//            VStack {
+//                Spacer(minLength: 15)
+//                GenericScreen(title: "Breakfast", firstRow: ("Proteins", "Type your protein intake here"), secondRow: ("Grains", "Type your grain intake here"), thirdRow: ("Fruits", "Type your fruit intake here"))
+//                
+//                Spacer(minLength: 50)
+//                
+//                CustomButton(customFont: customFont, title: "Save breakfast") {
+//                    print("Saving brakfast details now...")
+////                    CustomTextField.printInput()
+//                }
+//            }
+//        }
+//    }
+//    
+//    private func saveFoodIntake() {
+//        // save food intake to foodIntakeController array
+//    }
+//}
 
-struct BreakfastScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        BreakfastScreen()
-    }
-}
+//struct BreakfastScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        BreakfastScreen()
+//    }
+//}

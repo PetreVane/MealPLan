@@ -13,7 +13,7 @@ struct CustomTextField: View {
     
     var placeholderText: String
     var customFont = "Avenir Next"
-    @State var textFieldValue: String = ""
+    @Binding var textFieldValue: String
     
     
     var body: some View {
@@ -22,21 +22,16 @@ struct CustomTextField: View {
             .padding(.horizontal)
             .textFieldStyle(RoundedBorderTextFieldStyle())
     }
-    
-    func printInput() {
-        _ = $textFieldValue.wrappedValue
-        print("You've typed \(textFieldValue)")
-    }
 }
 
-struct CustomTextField_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack(alignment: .center, spacing: 15) {
-            CustomTextField(placeholderText: "PlaceHolder text")
-            CustomButton(title: "Save textField value") {
-                let texty = CustomTextField(placeholderText: "Test")
-                texty.printInput()
-            }
-        }
-    }
-}
+//struct CustomTextField_Previews: PreviewProvider {
+//    static var previews: some View {
+//        VStack(alignment: .center, spacing: 15) {
+//            CustomTextField(placeholderText: "PlaceHolder text", textFieldValue: <#Binding<String>#>)
+//            CustomButton(title: "Save textField value") {
+//                let texty = CustomTextField(placeholderText: "Test")
+//                texty.printInput()
+//            }
+//        }
+//    }
+//}

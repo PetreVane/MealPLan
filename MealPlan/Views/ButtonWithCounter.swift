@@ -39,7 +39,7 @@ struct ButtonWithCounter: View {
     
     var body: some View {
         VStack {
-            Button(action: { counter += 1 }, label: {
+            Button(action: { self.counter += 1 }, label: {
                 Text("\(counter)")
                     .padding()
                     .background(backgroundColor)
