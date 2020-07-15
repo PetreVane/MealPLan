@@ -1,5 +1,5 @@
 //
-//  CustomSegmentedControl.swift
+//  CustomFormView.swift
 //  MealPlan
 //
 //  Created by Petre Vane on 14/07/2020.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CustomSegmentedControl: View {
+struct CustomFormView: View {
     @State private var selection: [String] = []
     @State var timeSelection = 0
     
@@ -28,11 +28,11 @@ struct CustomSegmentedControl: View {
                 }
                 
                 Section {
-                    NavigationLink("Press me", destination: MultipleSelectionList())
+                    NavigationLink("\(timeOfDay[timeSelection])", destination: MultipleSelectionList())
 
                 }
                 
-                Text("You've selected: \(timeOfDay[timeSelection])")
+//                Text("You've selected: \(timeOfDay[timeSelection])")
             }.navigationBarTitle("Form")
         }
     }
@@ -40,6 +40,6 @@ struct CustomSegmentedControl: View {
 
 struct CustomSegmentedControl_Previews: PreviewProvider {
     static var previews: some View {
-        CustomSegmentedControl()
+        CustomFormView()
     }
 }
