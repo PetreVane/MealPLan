@@ -32,17 +32,17 @@ struct DinnerScreen: View {
                 
                 CustomButton(title: "Save dinner") {
                     print("Saving dinner details now ...")
-                    self.saveFoodIntake()
+//                    self.saveFoodIntake()
                 }
             }
         }
     }
     
-    func saveFoodIntake() {
-        let foodIntake = FoodIntake(proteins: proteins, grains: grains, fruits: "", vegetables: vegetables, salad: salad, fats: fat)
-        foodIntakeController.add(foodIntake)
-        foodIntakeController.checkStatus()
-    }
+//    func saveFoodIntake() {
+//        let foodIntake = FoodIntake(proteins: proteins, grains: grains, fruits: "", vegetables: vegetables, salad: salad, fats: fat)
+//        foodIntakeController.add(foodIntake)
+//        foodIntakeController.checkStatus()
+//    }
 }
 
 struct DinnerScreen_Previews: PreviewProvider {
