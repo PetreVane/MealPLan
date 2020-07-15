@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
 //        coordinator = AppCoordinator()
-        let rootView = DinnerScreen().environment(\.managedObjectContext, context)
+        let rootView = CustomFormView().environment(\.managedObjectContext, context)
 //        guard coordinator != nil else { print("No coordinator"); return }
 //         let contentView = coordinator!.determineAppFlow()
         // Use a UIHostingController as window root view controller.

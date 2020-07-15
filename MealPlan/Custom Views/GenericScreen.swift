@@ -8,85 +8,91 @@
 
 import SwiftUI
 
+enum TimeOfDay {
+    case breakfast
+    case lunch
+    case dinner
+    
+    var description: String {
+        switch self {
+            case .breakfast: return "Breakfast"
+            case .lunch: return "Lunch"
+            case .dinner: return "Dinner"
+        }
+    }
+}
+
 /// Generic view that initializes several CustomVStackSubview's with title and label content
 struct GenericScreen: View {
     
+    @Binding var isChecked: Bool
+    var timeOfDay: TimeOfDay
     
-    var title: String
-    var firstRow: (title: String, placeholder: String)
-    var secondRow: (title: String, placeholder: String)
-    var thirdRow: (title: String, placeholder: String)
-    var fourthRow: (title: String, placeholder: String)?
-    var fifthRow: (title: String, placeholder: String)?
-
-    // Bindings
-    @Binding var firstTextField: String
-    @Binding var secondTextField: String
-    @Binding var thirdTextField: String
-    @Binding var fourthTextField: String
-    @Binding var fifthTextField: String
-   
-    
+    var title: String = ""
+    var breakfast = ["Proteins", "Grains", "Fruits"]
+    var lunch = ["Proteins", "Grains", "Fruits", "Vegetables", "Fat"]
+    var dinner = ["Proteins", "Grains", "Fruits", "Vegetables","Salad" ,"Fat"]
     
     var body: some View {
         
         VStack {
-            VStack(alignment: .center, spacing: 35) {
-                Text(title)
-                    .font(.custom("Avenir Next", size: 35))
-                    .fontWeight(.thin)
-                    .foregroundColor(.gray)
-            }
             
-            CustomVStackSubview(textViewValue: firstRow.title, textFieldPlaceholderValue: firstRow.placeholder, textFieldValue: $firstTextField)
-            
-            CustomVStackSubview(textViewValue: secondRow.title, textFieldPlaceholderValue: secondRow.placeholder, textFieldValue: $secondTextField)
-            CustomVStackSubview(textViewValue:thirdRow.title, textFieldPlaceholderValue: thirdRow.placeholder, textFieldValue: $thirdTextField)
-            
-            if fourthRow != nil {
-                CustomVStackSubview(textViewValue: fourthRow?.title ?? "nil", textFieldPlaceholderValue: fourthRow?.placeholder ?? "nil", textFieldValue: $fourthTextField)
-            }
-            
-            if fifthRow != nil {
-                CustomVStackSubview(textViewValue: fifthRow?.title ?? "nil", textFieldPlaceholderValue: fifthRow?.placeholder ?? "nil", textFieldValue: $fifthTextField)
+            switch timeOfDay {
+            case .breakfast:
+                    ForEach(breakfast.indices) { index in
+                        CustomVStackSubview(textViewValue: breakfast[index], isChecked: $isChecked)
+                    }
+            case .lunch:
+                    ForEach(lunch.indices) { index in
+                        CustomVStackSubview(textViewValue: lunch[index], isChecked: $isChecked)
+                    }
+            case .dinner:
+                    ForEach(dinner.indices) { index in
+                        CustomVStackSubview(textViewValue: dinner[index], isChecked: $isChecked)
+                    }
+                }
             }
         }
     }
-    
-}
 
 /// Contains one filled circle (point) and one Text view
 struct CustomVStackSubview: View {
     
-//    var requiredProperty: CustomVStackProtocol
-    var textViewValue: String
-    var textFieldPlaceholderValue: String
     var customFont = "Avenir Next"
-    @Binding var textFieldValue: String
+    var textViewValue: String
+
+    @Binding var isChecked: Bool
+    
    
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
-            HStack {
-                Circle()
-                    .fill(Color.gray)
-                    .fixedSize()
+            
+            HStack(alignment: .center, spacing: 50) {
+                
+                Image(systemName: isChecked ? "checkmark.shield.fill" : "checkmark.shield")
+                    .antialiased(true)
+                    .font(.system(size: 35, weight: .thin, design: .rounded))
+                    .foregroundColor( isChecked ? .green : .black)
+                
                 
                 Text(textViewValue)
                     .font(.custom(customFont, size: 25))
                     .fontWeight(.thin)
+                
+                Spacer(minLength: 5)
             }
+            .padding(.all, 10)
+            .border(Color.black, width: 0.5)
             
-            CustomTextField(placeholderText: textFieldPlaceholderValue, textFieldValue: $textFieldValue)
-            
-            
-        }.padding()
+        }.padding(.all, 15)
     }
 }
 
-struct GenericScreen_Previews: PreviewProvider {
-
-    static var previews: some View {
-        GenericScreen(title: "This is the title", firstRow: ("Proteins", "Protein intakes"), secondRow: ("Grains", "Grains intake"), thirdRow: ("Vegetables", "Vegetables intake"), fourthRow: ("Salad", "Salad intake"), fifthRow: ("Fat", "Fat intake"), firstTextField: .constant(" "), secondTextField: .constant(" "), thirdTextField: .constant(" "), fourthTextField: .constant(" "), fifthTextField: .constant(" "))
-    }
-}
+//struct GenericScreen_Previews: PreviewProvider {
+//
+//    static var previews: some View {
+//        
+//        GenericScreen(isChecked: .constant(false), timeOfDay: .constant(TimeOfDay.breakfast))
+//    }
+//}
