@@ -12,6 +12,7 @@ import Foundation
 struct FoodIntake: Identifiable {
     
     var id = UUID()
+    var timeOfDay: String // eg. breakfast or dinner
     var proteins: Proteins
     var grains: Grains
     var fruits: Fruits
