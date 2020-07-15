@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0A79E624BDA95A003A622E /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0A79E524BDA95A003A622E /* CustomSegmentedControl.swift */; };
 		0B4A615224A49A31007BC69A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A615124A49A31007BC69A /* AppDelegate.swift */; };
 		0B4A615424A49A31007BC69A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A615324A49A31007BC69A /* SceneDelegate.swift */; };
 		0B4A615724A49A31007BC69A /* MealPlan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A615524A49A31007BC69A /* MealPlan.xcdatamodeld */; };
@@ -29,11 +30,13 @@
 		0B754C0524AB71BC0028A6C3 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B754C0424AB71BC0028A6C3 /* CustomButtonStyle.swift */; };
 		0B754C0724ABB2B90028A6C3 /* ButtonWithCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B754C0624ABB2B90028A6C3 /* ButtonWithCounter.swift */; };
 		0B878F9324BCAC4F001495B6 /* FoodIntakeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B878F9224BCAC4F001495B6 /* FoodIntakeController.swift */; };
+		0BC1DE7E24BDD3BB0025AF85 /* MultipleSelectionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1DE7D24BDD3BB0025AF85 /* MultipleSelectionRow.swift */; };
 		0BE023F924AA40B700A535D5 /* FoodIntake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE023F824AA40B700A535D5 /* FoodIntake.swift */; };
 		0BE023FF24AA423B00A535D5 /* BreakfastCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE023FE24AA423B00A535D5 /* BreakfastCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B0A79E524BDA95A003A622E /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		0B4A614E24A49A31007BC69A /* MealPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4A615124A49A31007BC69A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B4A615324A49A31007BC69A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 		0B754C0424AB71BC0028A6C3 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		0B754C0624ABB2B90028A6C3 /* ButtonWithCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithCounter.swift; sourceTree = "<group>"; };
 		0B878F9224BCAC4F001495B6 /* FoodIntakeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodIntakeController.swift; sourceTree = "<group>"; };
+		0BC1DE7D24BDD3BB0025AF85 /* MultipleSelectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionRow.swift; sourceTree = "<group>"; };
 		0BE023F824AA40B700A535D5 /* FoodIntake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodIntake.swift; sourceTree = "<group>"; };
 		0BE023FE24AA423B00A535D5 /* BreakfastCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakfastCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +127,8 @@
 				0B4A616E24A49B06007BC69A /* CustomTextField.swift */,
 				0B4A618424A4DB29007BC69A /* CustomText.swift */,
 				0B754C0424AB71BC0028A6C3 /* CustomButtonStyle.swift */,
+				0B0A79E524BDA95A003A622E /* CustomSegmentedControl.swift */,
+				0BC1DE7D24BDD3BB0025AF85 /* MultipleSelectionRow.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -255,6 +261,8 @@
 				0B878F9324BCAC4F001495B6 /* FoodIntakeController.swift in Sources */,
 				0B4A618324A4D080007BC69A /* DetailedView.swift in Sources */,
 				0B4A617C24A49B27007BC69A /* LogOutScreen.swift in Sources */,
+				0B0A79E624BDA95A003A622E /* CustomSegmentedControl.swift in Sources */,
+				0BC1DE7E24BDD3BB0025AF85 /* MultipleSelectionRow.swift in Sources */,
 				0B754C0524AB71BC0028A6C3 /* CustomButtonStyle.swift in Sources */,
 				0B4A617324A49B11007BC69A /* CircleImage.swift in Sources */,
 				0B4A615224A49A31007BC69A /* AppDelegate.swift in Sources */,
