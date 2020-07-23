@@ -25,45 +25,90 @@ enum TimeOfDay {
 /// Generic view that initializes several CustomVStackSubview's with title and label content
 struct GenericScreen: View {
     
-    @Binding var isChecked: Bool
     var timeOfDay: TimeOfDay
     
-    var title: String = ""
-    var breakfast = ["Proteins", "Grains", "Fruits"]
-    var lunch = ["Proteins", "Grains", "Fruits", "Vegetables", "Fat"]
-    var dinner = ["Proteins", "Grains", "Fruits", "Vegetables","Salad" ,"Fat"]
+    @State private var breakfast = ["Proteins": false, "Grains" : false, "Fruits" : false]
+    @State private var lunch = ["Proteins" : false, "Grains" : false, "Fruits" : false, "Vegetables" : false, "Fat" : false]
+    @State private var dinner = ["Proteins" : false, "Grains" : false, "Fruits" : false, "Vegetables" : false, "Salad" : false, "Fat" : false]
+    
+    
+    @State private var values: [Bool] = []
+    @State private var customBinding = false
+    
+    @ObservedObject var dailyIntake = DailyIntake()
     
     var body: some View {
-        
+
         VStack {
-            
-            switch timeOfDay {
+
+        switch timeOfDay {
             case .breakfast:
-                    ForEach(breakfast.indices) { index in
-                        CustomVStackSubview(textViewValue: breakfast[index], isChecked: $isChecked)
-                    }
+                let breakfastKeys = getDictionaryKeys(breakfast)
+                ForEach(breakfastKeys.indices, id: \.self) { index in
+                    
+                    let key = breakfastKeys[index]
+                    let breakfastBinding = Binding(
+                        get: { getDictionaryValue(breakfast, forKey: key) },
+                        set: { updateDictionaryValues(breakfast, forKey: key, withValue: $0)})
+                    CustomVStackSubview(rowName: key, isChecked: breakfastBinding) }
+                
             case .lunch:
-                    ForEach(lunch.indices) { index in
-                        CustomVStackSubview(textViewValue: lunch[index], isChecked: $isChecked)
+                let lunchKeys = getDictionaryKeys(lunch)
+                ForEach(lunchKeys.indices, id: \.self) { index in
+                    
+                    let key = lunchKeys[index]
+                    let lunchBinding = Binding(
+                        get: { getDictionaryValue(lunch, forKey: key)},
+                        set: { updateDictionaryValues(lunch, forKey: key, withValue: $0)})
+                    CustomVStackSubview(rowName: lunchKeys[index], isChecked: lunchBinding)
+
                     }
             case .dinner:
-                    ForEach(dinner.indices) { index in
-                        CustomVStackSubview(textViewValue: dinner[index], isChecked: $isChecked)
+                let dinnerKeys = getDictionaryKeys(dinner)
+                    ForEach(dinnerKeys.indices, id: \.self) { index in
+                        let key = dinnerKeys[index]
+                        let dinnerBinding = Binding(
+                            get: { getDictionaryValue(dinner, forKey: key)},
+                            set: { updateDictionaryValues(dinner, forKey: key, withValue: $0)})
+                        CustomVStackSubview(rowName: dinnerKeys[index], isChecked: dinnerBinding)
+
                     }
                 }
             }
         }
+    
+    func getDictionaryKeys(_ dictionary: Dictionary<String, Bool>) -> [String] {
+        var temp: [String] = []
+        for element in dictionary.keys {
+            temp.append(element)
+        }
+        return temp
     }
+    
+    func updateDictionaryValues(_ dictionary: Dictionary<String, Bool>, forKey key: String, withValue value: Bool) {
+        var localDictCopy = dictionary
+        localDictCopy.updateValue(value, forKey: key)
+        
+        switch dictionary {
+            case breakfast: breakfast = localDictCopy
+            case lunch: lunch = localDictCopy
+            case dinner: dinner = localDictCopy
+            default: print("Default case")
+        }
+    }
+    
+    func getDictionaryValue(_ dictionary: Dictionary<String, Bool>, forKey key: String) -> Bool {
+        return dictionary[key]!
+    }
+}
 
 /// Contains one filled circle (point) and one Text view
 struct CustomVStackSubview: View {
     
     var customFont = "Avenir Next"
-    var textViewValue: String
+    var rowName: String
 
     @Binding var isChecked: Bool
-    
-   
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
@@ -76,7 +121,7 @@ struct CustomVStackSubview: View {
                     .foregroundColor( isChecked ? .green : .black)
                 
                 
-                Text(textViewValue)
+                Text(rowName)
                     .font(.custom(customFont, size: 25))
                     .fontWeight(.thin)
                 
@@ -85,14 +130,23 @@ struct CustomVStackSubview: View {
             .padding(.all, 10)
             .border(Color.black, width: 0.5)
             
-        }.padding(.all, 15)
+        }
+        .padding(.all, 15)
+        .onTapGesture {
+            isChecked.toggle()
+            userTapped()
+        }
+    }
+    
+    private func userTapped() {
+        print("User has tapped \(rowName)")
     }
 }
 
-//struct GenericScreen_Previews: PreviewProvider {
-//
-//    static var previews: some View {
-//        
+struct GenericScreen_Previews: PreviewProvider {
+
+    static var previews: some View {
+        GenericScreen(timeOfDay: TimeOfDay.breakfast)
 //        GenericScreen(isChecked: .constant(false), timeOfDay: .constant(TimeOfDay.breakfast))
-//    }
-//}
+    }
+}
