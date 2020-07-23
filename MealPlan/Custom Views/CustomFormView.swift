@@ -11,7 +11,6 @@ import SwiftUI
 struct CustomFormView: View {
     
     @State var segmentedControllerIndex = 0
-    @State private var isChecked = false
     
     // Maps a String to each of TimeOfDay (enum) cases
     var dayTime: Dictionary<String, TimeOfDay> = ["Breakfast": .breakfast, "Lunch": .lunch, "Dinner" : .dinner]
@@ -25,14 +24,14 @@ struct CustomFormView: View {
             Form {
                 Section {
                     Picker("Options", selection: $segmentedControllerIndex) {
-                        ForEach(0 ..< listOfDayTimePeriods.count) { dayTime in
+                        ForEach(listOfDayTimePeriods.indices, id:\.self) { dayTime in
                             Text(listOfDayTimePeriods[dayTime]).tag(dayTime)
                         }
                     }.pickerStyle(SegmentedPickerStyle())
                 }
                 
                 Section {
-                    GenericScreen(isChecked: $isChecked, timeOfDay: dayTime[listOfDayTimePeriods[segmentedControllerIndex]] ?? TimeOfDay.breakfast)
+                    GenericScreen(timeOfDay: dayTime[listOfDayTimePeriods[segmentedControllerIndex]] ?? TimeOfDay.breakfast)
                 }
                 
                 Section  { }
