@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B0A79E624BDA95A003A622E /* CustomFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0A79E524BDA95A003A622E /* CustomFormView.swift */; };
 		0B2E624024C9B08E0040500F /* DailyIntake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E623F24C9B08E0040500F /* DailyIntake.swift */; };
+		0B2E624224C9E8290040500F /* NavigationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E624124C9E8290040500F /* NavigationTest.swift */; };
 		0B4A615224A49A31007BC69A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A615124A49A31007BC69A /* AppDelegate.swift */; };
 		0B4A615424A49A31007BC69A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A615324A49A31007BC69A /* SceneDelegate.swift */; };
 		0B4A615724A49A31007BC69A /* MealPlan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A615524A49A31007BC69A /* MealPlan.xcdatamodeld */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		0B0A79E524BDA95A003A622E /* CustomFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFormView.swift; sourceTree = "<group>"; };
 		0B2E623F24C9B08E0040500F /* DailyIntake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyIntake.swift; sourceTree = "<group>"; };
+		0B2E624124C9E8290040500F /* NavigationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTest.swift; sourceTree = "<group>"; };
 		0B4A614E24A49A31007BC69A /* MealPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4A615124A49A31007BC69A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B4A615324A49A31007BC69A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B2E624324C9EB6D0040500F /* Visual Elements */ = {
+			isa = PBXGroup;
+			children = (
+				0B4A617124A49B11007BC69A /* CircleImage.swift */,
+				0B4A616C24A49AFA007BC69A /* CustomButton.swift */,
+				0B4A616E24A49B06007BC69A /* CustomTextField.swift */,
+				0B4A618424A4DB29007BC69A /* CustomText.swift */,
+				0B754C0424AB71BC0028A6C3 /* CustomButtonStyle.swift */,
+			);
+			path = "Visual Elements";
+			sourceTree = "<group>";
+		};
 		0B4A614524A49A31007BC69A = {
 			isa = PBXGroup;
 			children = (
@@ -125,14 +139,11 @@
 		0B4A616824A49A4E007BC69A /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				0B4A617124A49B11007BC69A /* CircleImage.swift */,
+				0B2E624324C9EB6D0040500F /* Visual Elements */,
 				0B4A617024A49B11007BC69A /* GenericScreen.swift */,
-				0B4A616C24A49AFA007BC69A /* CustomButton.swift */,
-				0B4A616E24A49B06007BC69A /* CustomTextField.swift */,
-				0B4A618424A4DB29007BC69A /* CustomText.swift */,
-				0B754C0424AB71BC0028A6C3 /* CustomButtonStyle.swift */,
 				0B0A79E524BDA95A003A622E /* CustomFormView.swift */,
 				0BC1DE7D24BDD3BB0025AF85 /* MultipleSelectionRow.swift */,
+				0B2E624124C9E8290040500F /* NavigationTest.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -281,6 +292,7 @@
 				0B4A617224A49B11007BC69A /* GenericScreen.swift in Sources */,
 				0BE023F924AA40B700A535D5 /* FoodIntake.swift in Sources */,
 				0B61242224C97E9600DCF6EF /* User.swift in Sources */,
+				0B2E624224C9E8290040500F /* NavigationTest.swift in Sources */,
 				0B4A618124A49B3B007BC69A /* AppCoordinator.swift in Sources */,
 				0B2E624024C9B08E0040500F /* DailyIntake.swift in Sources */,
 				0B4A615424A49A31007BC69A /* SceneDelegate.swift in Sources */,

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct MultipleSelectionList: View {
+    
     var items: [String] = ["Apples", "Pears", "Grapes"]
     @State var selections: [String] = []
     
