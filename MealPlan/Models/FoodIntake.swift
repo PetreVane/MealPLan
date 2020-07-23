@@ -32,9 +32,7 @@ struct FoodIntake: Identifiable {
         var content: Dictionary<Int, [String]>
         
         // holds a selection of common protein sources
-        static let breakfastProteins = ["Yogurt", "Milk", "Eggs", "Cottage cheese", "Ricotta chese", "Unsweetened soy milk", "Unsweetened almond milk", "Unsweetened other nondairy milk (hemp,flax, etc)", "Tofu", "Hummus", "Soya granules", "Nuts (including nuts butter", "Seeds"]
-        
-        static let lunchAndDinnerProteins = ["Fish", "Shrimps or other shellfish", "Tofu", "Tempeh", "Beans",  "Lentils", "Hummus", "Shelled edamame", "Veggie burger", "Soy nuts (or dry roasted edamame"]
+        static let proteins = ["Yogurt", "Milk", "Eggs", "Cottage cheese", "Ricotta chese", "Unsweetened soy milk", "Unsweetened almond milk", "Unsweetened other nondairy milk (hemp,flax, etc)", "Tofu", "Hummus", "Soya granules", "Nuts (including nuts butter", "Seeds", "Fish", "Shrimps or other shellfish", "Tofu", "Tempeh", "Beans",  "Lentils", "Hummus", "Shelled edamame", "Veggie burger", "Soy nuts (or dry roasted edamame"]
     }
     
     struct Grains {
@@ -45,7 +43,7 @@ struct FoodIntake: Identifiable {
         
         var content: Dictionary<Int, [String]>
         
-        static let breakfastGrains = ["Pre-Cooked Hot", "Dry Cold or hot", "Potato", "Sweet potato", "Yam", "Rice", "Quinoa", "Millet", "Oatmeal", "Oat bran", "Cream of rice", "Shredded wheat", "Fiber one"]
+        static let grains = ["Pre-Cooked Hot", "Dry Cold or hot", "Potato", "Sweet potato", "Yam", "Rice", "Quinoa", "Millet", "Oatmeal", "Oat bran", "Cream of rice", "Shredded wheat", "Fiber one"]
     }
     
     struct Fruits {
@@ -93,4 +91,6 @@ struct FoodIntake: Identifiable {
 //    var fats = FoodIntake.Fats(fatsContent: [83: ["Cedar", "Almonds butter"]])
 //    
 //}
+
+//        static let lunchAndDinnerProteins = ["Fish", "Shrimps or other shellfish", "Tofu", "Tempeh", "Beans",  "Lentils", "Hummus", "Shelled edamame", "Veggie burger", "Soy nuts (or dry roasted edamame"]
 

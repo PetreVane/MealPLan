@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B0A79E624BDA95A003A622E /* CustomFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0A79E524BDA95A003A622E /* CustomFormView.swift */; };
+		0B2E624024C9B08E0040500F /* DailyIntake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E623F24C9B08E0040500F /* DailyIntake.swift */; };
 		0B4A615224A49A31007BC69A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A615124A49A31007BC69A /* AppDelegate.swift */; };
 		0B4A615424A49A31007BC69A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A615324A49A31007BC69A /* SceneDelegate.swift */; };
 		0B4A615724A49A31007BC69A /* MealPlan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A615524A49A31007BC69A /* MealPlan.xcdatamodeld */; };
@@ -27,6 +28,7 @@
 		0B4A618124A49B3B007BC69A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A618024A49B3B007BC69A /* AppCoordinator.swift */; };
 		0B4A618324A4D080007BC69A /* DetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A618224A4D080007BC69A /* DetailedView.swift */; };
 		0B4A618524A4DB29007BC69A /* CustomText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A618424A4DB29007BC69A /* CustomText.swift */; };
+		0B61242224C97E9600DCF6EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61242124C97E9600DCF6EF /* User.swift */; };
 		0B754C0524AB71BC0028A6C3 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B754C0424AB71BC0028A6C3 /* CustomButtonStyle.swift */; };
 		0B754C0724ABB2B90028A6C3 /* ButtonWithCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B754C0624ABB2B90028A6C3 /* ButtonWithCounter.swift */; };
 		0B878F9324BCAC4F001495B6 /* FoodIntakeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B878F9224BCAC4F001495B6 /* FoodIntakeController.swift */; };
@@ -37,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		0B0A79E524BDA95A003A622E /* CustomFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFormView.swift; sourceTree = "<group>"; };
+		0B2E623F24C9B08E0040500F /* DailyIntake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyIntake.swift; sourceTree = "<group>"; };
 		0B4A614E24A49A31007BC69A /* MealPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4A615124A49A31007BC69A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B4A615324A49A31007BC69A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 		0B4A618024A49B3B007BC69A /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		0B4A618224A4D080007BC69A /* DetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedView.swift; sourceTree = "<group>"; };
 		0B4A618424A4DB29007BC69A /* CustomText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomText.swift; sourceTree = "<group>"; };
+		0B61242124C97E9600DCF6EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0B754C0424AB71BC0028A6C3 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		0B754C0624ABB2B90028A6C3 /* ButtonWithCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithCounter.swift; sourceTree = "<group>"; };
 		0B878F9224BCAC4F001495B6 /* FoodIntakeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodIntakeController.swift; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				0BE023F824AA40B700A535D5 /* FoodIntake.swift */,
+				0B61242124C97E9600DCF6EF /* User.swift */,
+				0B2E623F24C9B08E0040500F /* DailyIntake.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -274,7 +280,9 @@
 				0B754C0724ABB2B90028A6C3 /* ButtonWithCounter.swift in Sources */,
 				0B4A617224A49B11007BC69A /* GenericScreen.swift in Sources */,
 				0BE023F924AA40B700A535D5 /* FoodIntake.swift in Sources */,
+				0B61242224C97E9600DCF6EF /* User.swift in Sources */,
 				0B4A618124A49B3B007BC69A /* AppCoordinator.swift in Sources */,
+				0B2E624024C9B08E0040500F /* DailyIntake.swift in Sources */,
 				0B4A615424A49A31007BC69A /* SceneDelegate.swift in Sources */,
 				0B4A616D24A49AFA007BC69A /* CustomButton.swift in Sources */,
 			);
