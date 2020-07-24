@@ -39,11 +39,11 @@ struct GenericScreen: View {
         
         VStack {
             switch timeOfDay {
-            case .breakfast:
+            case .breakfast: //BreakfastView()
                 let breakfastKeys = getDictionaryKeys(breakfast)
                 List {
                     ForEach(breakfastKeys.indices, id: \.self) { index in
-                        
+
                         let key = breakfastKeys[index]
                         let breakfastBinding = Binding(
                             get: { getDictionaryValue(breakfast, forKey: key) },
@@ -52,25 +52,25 @@ struct GenericScreen: View {
                     }
                 }
                 
-            case .lunch:
-                let lunchKeys = getDictionaryKeys(lunch)
-                ForEach(lunchKeys.indices, id: \.self) { index in
-                    
-                    let key = lunchKeys[index]
-                    let lunchBinding = Binding(
-                        get: { getDictionaryValue(lunch, forKey: key)},
-                        set: { updateDictionaryValues(lunch, forKey: key, withValue: $0)})
-                    CustomVStackSubview(rowName: lunchKeys[index], isChecked: lunchBinding)
-                }
-            case .dinner:
-                let dinnerKeys = getDictionaryKeys(dinner)
-                ForEach(dinnerKeys.indices, id: \.self) { index in
-                    let key = dinnerKeys[index]
-                    let dinnerBinding = Binding(
-                        get: { getDictionaryValue(dinner, forKey: key)},
-                        set: { updateDictionaryValues(dinner, forKey: key, withValue: $0)})
-                    CustomVStackSubview(rowName: dinnerKeys[index], isChecked: dinnerBinding)
-                }
+            case .lunch: LunchView()
+//                let lunchKeys = getDictionaryKeys(lunch)
+//                ForEach(lunchKeys.indices, id: \.self) { index in
+//
+//                    let key = lunchKeys[index]
+//                    let lunchBinding = Binding(
+//                        get: { getDictionaryValue(lunch, forKey: key)},
+//                        set: { updateDictionaryValues(lunch, forKey: key, withValue: $0)})
+//                    CustomVStackSubview(rowName: lunchKeys[index], isChecked: lunchBinding)
+//                }
+            case .dinner: DinnerView()
+//                let dinnerKeys = getDictionaryKeys(dinner)
+//                ForEach(dinnerKeys.indices, id: \.self) { index in
+//                    let key = dinnerKeys[index]
+//                    let dinnerBinding = Binding(
+//                        get: { getDictionaryValue(dinner, forKey: key)},
+//                        set: { updateDictionaryValues(dinner, forKey: key, withValue: $0)})
+//                    CustomVStackSubview(rowName: dinnerKeys[index], isChecked: dinnerBinding)
+//                }
             }
         }
     }
@@ -86,7 +86,7 @@ struct GenericScreen: View {
     func getDictionaryValue(_ dictionary: Dictionary<String, Bool>, forKey key: String) -> Bool {
         return dictionary[key]!
     }
-    
+
     func updateDictionaryValues(_ dictionary: Dictionary<String, Bool>, forKey key: String, withValue value: Bool) {
         var localDictCopy = dictionary
         localDictCopy.updateValue(value, forKey: key)
@@ -143,7 +143,6 @@ struct CustomVStackSubview: View {
 struct GenericScreen_Previews: PreviewProvider {
 
     static var previews: some View {
-        GenericScreen(timeOfDay: TimeOfDay.breakfast)
-//        GenericScreen(isChecked: .constant(false), timeOfDay: .constant(TimeOfDay.breakfast))
+        GenericScreen(timeOfDay: TimeOfDay.lunch)
     }
 }

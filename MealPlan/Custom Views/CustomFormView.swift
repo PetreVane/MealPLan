@@ -28,6 +28,7 @@ struct CustomFormView: View {
             }
             
             Section {
+             
                 let dayPeriod = listOfDayTimePeriods[segmentedControllerIndex]
                 GenericScreen(timeOfDay: dayTime[dayPeriod]!)
             }
