@@ -30,27 +30,27 @@ struct GenericScreen: View {
     @State private var breakfast = ["Proteins": false, "Grains" : false, "Fruits" : false]
     @State private var lunch = ["Proteins" : false, "Grains" : false, "Fruits" : false, "Vegetables" : false, "Fat" : false]
     @State private var dinner = ["Proteins" : false, "Grains" : false, "Fruits" : false, "Vegetables" : false, "Salad" : false, "Fat" : false]
+   
     
-    
-    @State private var values: [Bool] = []
+    @State private var pickerSelection: String = ""
     @State private var customBinding = false
     
-    @ObservedObject var dailyIntake = DailyIntake()
-    
     var body: some View {
-
+        
         VStack {
-
-        switch timeOfDay {
+            switch timeOfDay {
             case .breakfast:
                 let breakfastKeys = getDictionaryKeys(breakfast)
-                ForEach(breakfastKeys.indices, id: \.self) { index in
-                    
-                    let key = breakfastKeys[index]
-                    let breakfastBinding = Binding(
-                        get: { getDictionaryValue(breakfast, forKey: key) },
-                        set: { updateDictionaryValues(breakfast, forKey: key, withValue: $0)})
-                    CustomVStackSubview(rowName: key, isChecked: breakfastBinding) }
+                List {
+                    ForEach(breakfastKeys.indices, id: \.self) { index in
+                        
+                        let key = breakfastKeys[index]
+                        let breakfastBinding = Binding(
+                            get: { getDictionaryValue(breakfast, forKey: key) },
+                            set: { updateDictionaryValues(breakfast, forKey: key, withValue: $0)})
+                        CustomVStackSubview(rowName: key, isChecked: breakfastBinding)
+                    }
+                }
                 
             case .lunch:
                 let lunchKeys = getDictionaryKeys(lunch)
@@ -61,21 +61,19 @@ struct GenericScreen: View {
                         get: { getDictionaryValue(lunch, forKey: key)},
                         set: { updateDictionaryValues(lunch, forKey: key, withValue: $0)})
                     CustomVStackSubview(rowName: lunchKeys[index], isChecked: lunchBinding)
-
-                    }
+                }
             case .dinner:
                 let dinnerKeys = getDictionaryKeys(dinner)
-                    ForEach(dinnerKeys.indices, id: \.self) { index in
-                        let key = dinnerKeys[index]
-                        let dinnerBinding = Binding(
-                            get: { getDictionaryValue(dinner, forKey: key)},
-                            set: { updateDictionaryValues(dinner, forKey: key, withValue: $0)})
-                        CustomVStackSubview(rowName: dinnerKeys[index], isChecked: dinnerBinding)
-
-                    }
+                ForEach(dinnerKeys.indices, id: \.self) { index in
+                    let key = dinnerKeys[index]
+                    let dinnerBinding = Binding(
+                        get: { getDictionaryValue(dinner, forKey: key)},
+                        set: { updateDictionaryValues(dinner, forKey: key, withValue: $0)})
+                    CustomVStackSubview(rowName: dinnerKeys[index], isChecked: dinnerBinding)
                 }
             }
         }
+    }
     
     func getDictionaryKeys(_ dictionary: Dictionary<String, Bool>) -> [String] {
         var temp: [String] = []
@@ -84,11 +82,15 @@ struct GenericScreen: View {
         }
         return temp
     }
+
+    func getDictionaryValue(_ dictionary: Dictionary<String, Bool>, forKey key: String) -> Bool {
+        return dictionary[key]!
+    }
     
     func updateDictionaryValues(_ dictionary: Dictionary<String, Bool>, forKey key: String, withValue value: Bool) {
         var localDictCopy = dictionary
         localDictCopy.updateValue(value, forKey: key)
-        
+
         switch dictionary {
             case breakfast: breakfast = localDictCopy
             case lunch: lunch = localDictCopy
@@ -96,11 +98,8 @@ struct GenericScreen: View {
             default: print("Default case")
         }
     }
-    
-    func getDictionaryValue(_ dictionary: Dictionary<String, Bool>, forKey key: String) -> Bool {
-        return dictionary[key]!
-    }
 }
+
 
 /// Contains one filled circle (point) and one Text view
 struct CustomVStackSubview: View {
@@ -111,7 +110,8 @@ struct CustomVStackSubview: View {
     @Binding var isChecked: Bool
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 15) {
+        
+        VStack(alignment: .leading, spacing: 5) {
             
             HStack(alignment: .center, spacing: 50) {
                 
@@ -119,17 +119,14 @@ struct CustomVStackSubview: View {
                     .antialiased(true)
                     .font(.system(size: 35, weight: .thin, design: .rounded))
                     .foregroundColor( isChecked ? .green : .black)
-                
-                
                 Text(rowName)
                     .font(.custom(customFont, size: 25))
                     .fontWeight(.thin)
-                
                 Spacer(minLength: 5)
+                
             }
             .padding(.all, 10)
-            .border(Color.black, width: 0.5)
-            
+//            .border(Color.black, width: 0.5)
         }
         .padding(.all, 15)
         .onTapGesture {
