@@ -45,19 +45,19 @@ struct BottomStack: View {
             Button(action: {
                 self.showBreakfastScreen.toggle()
             }) { CustomButtonTextView(title: "Breakfast") }
-            .sheet(isPresented: $showBreakfastScreen) { BreakfastScreen() }
+            .sheet(isPresented: $showBreakfastScreen) { BreakfastView() }
             .buttonStyle(CustomButtonStyle())
             
             Button(action: {
                 self.showLunchScreen.toggle()
-            }) { CustomButtonTextView(title: "Lunch    ")}
-            .sheet(isPresented: $showLunchScreen) { LunchScreen() }
+            }) { CustomButtonTextView(title: " Lunch    ")}
+            .sheet(isPresented: $showLunchScreen) { LunchView() }
             .buttonStyle(CustomButtonStyle())
             
             Button(action: {
                 self.showDinnerScreen.toggle()
             }) { CustomButtonTextView(title: "Dinner   ")}
-            .sheet(isPresented: $showDinnerScreen) { DinnerScreen() }
+            .sheet(isPresented: $showDinnerScreen) { DinnerView() }
             .buttonStyle(CustomButtonStyle())
         }
     }

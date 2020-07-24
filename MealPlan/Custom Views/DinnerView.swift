@@ -14,20 +14,25 @@ struct DinnerView: View {
     @State var isFullScreen = false
     
     var body: some View {
-        NavigationView {
-            List {
-                let dinnerKeys = getDictionaryKeys(testDinner)
-                ForEach(dinnerKeys.indices, id: \.self) { index in
-                    let key = dinnerKeys[index]
-                    let dinnerBinding = Binding(
-                        get: { getDictionaryValue(testDinner, forKey: key)},
-                        set: { updateDictionaryValues(testDinner, forKey: key, withValue: $0)})
-                    
-                    NavigationLink(destination: MultipleSelectionList()) {
-                        CustomVStackSubview(rowName: dinnerKeys[index], isChecked: dinnerBinding)
+        VStack {
+            NavigationView {
+                List {
+                    let dinnerKeys = getDictionaryKeys(testDinner)
+                    ForEach(dinnerKeys.indices, id: \.self) { index in
+                        let key = dinnerKeys[index]
+                        let dinnerBinding = Binding(
+                            get: { getDictionaryValue(testDinner, forKey: key)},
+                            set: { updateDictionaryValues(testDinner, forKey: key, withValue: $0)})
+                        
+                        NavigationLink(destination: MultipleSelectionList()) {
+                            CustomVStackSubview(rowName: dinnerKeys[index], isChecked: dinnerBinding)
+                        }
                     }
                 }
             }
+            CustomButton(title: "Save dinner") {
+                print("Saving dinner details now ...")
+            }.buttonStyle(CustomButtonStyle())
         }
     }
     

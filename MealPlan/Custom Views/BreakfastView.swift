@@ -13,8 +13,8 @@ struct BreakfastView: View {
    @State private var testBreakfast = ["Proteins": false, "Grains" : false, "Fruits" : false]
     
     var body: some View {
-        NavigationView {
-            VStack {
+        VStack {
+            NavigationView {
                 List {
                     let breakfastKeys = getDictionaryKeys(testBreakfast)
                     ForEach(breakfastKeys.indices, id: \.self) { index in
@@ -29,7 +29,11 @@ struct BreakfastView: View {
                     }
                 }
             }
+            CustomButton(title: "Save breakfast") {
+                print("Saving brakfast details now...")
+            }.buttonStyle(CustomButtonStyle())
         }
+
     }
     
     func getDictionaryKeys(_ dictionary: Dictionary<String, Bool>) -> [String] {

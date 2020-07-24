@@ -14,20 +14,25 @@ struct LunchView: View {
     @State private var isOn = false
     
     var body: some View {
-        NavigationView {
-            List {
-                let lunchKeys = getDictionaryKeys(testLunch)
-                ForEach(lunchKeys.indices, id: \.self) { index in
-                    
-                    let key = lunchKeys[index]
-                    let lunchBinding = Binding(
-                        get: { getDictionaryValue(testLunch, forKey: key)},
-                        set: { updateDictionaryValues(testLunch, forKey: key, withValue: $0)})
-                    NavigationLink(destination: MultipleSelectionList()) {
-                        CustomVStackSubview(rowName: lunchKeys[index], isChecked: lunchBinding)
+        VStack {
+            NavigationView {
+                List {
+                    let lunchKeys = getDictionaryKeys(testLunch)
+                    ForEach(lunchKeys.indices, id: \.self) { index in
+                        
+                        let key = lunchKeys[index]
+                        let lunchBinding = Binding(
+                            get: { getDictionaryValue(testLunch, forKey: key)},
+                            set: { updateDictionaryValues(testLunch, forKey: key, withValue: $0)})
+                        NavigationLink(destination: MultipleSelectionList()) {
+                            CustomVStackSubview(rowName: lunchKeys[index], isChecked: lunchBinding)
+                        }
                     }
                 }
             }
+            CustomButton(title: "Save Lunch") {
+                print("Saving lunch details now ..")
+            }.buttonStyle(CustomButtonStyle())
         }
     }
     

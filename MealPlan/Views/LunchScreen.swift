@@ -9,15 +9,13 @@
 import SwiftUI
 
 struct LunchScreen: View {
-    var customFont = "Avenir Next"
+
     var body: some View {
-        
         VStack {
             LunchView()
             CustomButton(title: "Save Lunch") {
                 print("Saving lunch details now ..")
-                
-            }
+            }.buttonStyle(CustomButtonStyle())
         }
     }
 }

@@ -10,14 +10,12 @@ import SwiftUI
 
 struct BreakfastScreen: View {
     
-    var customFont = "Avenir Next"
     var body: some View {
-        
         VStack {
             BreakfastView()
-            CustomButton(customFont: customFont, title: "Save breakfast") {
+            CustomButton(title: "Save breakfast") {
                 print("Saving brakfast details now...")
-            }
+            }.buttonStyle(CustomButtonStyle())
         }
     }
 }
