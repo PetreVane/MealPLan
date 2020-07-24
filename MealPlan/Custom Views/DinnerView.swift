@@ -24,7 +24,7 @@ struct DinnerView: View {
                             get: { getDictionaryValue(testDinner, forKey: key)},
                             set: { updateDictionaryValues(testDinner, forKey: key, withValue: $0)})
                         
-                        NavigationLink(destination: MultipleSelectionList()) {
+                        NavigationLink(destination: MultipleSelectionList(items: FoodIntake.Fats.fats)) {
                             CustomVStackSubview(rowName: dinnerKeys[index], isChecked: dinnerBinding)
                         }
                     }

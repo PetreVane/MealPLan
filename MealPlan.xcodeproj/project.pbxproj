@@ -99,6 +99,7 @@
 		0B2E624324C9EB6D0040500F /* Visual Elements */ = {
 			isa = PBXGroup;
 			children = (
+				0B754C0624ABB2B90028A6C3 /* ButtonWithCounter.swift */,
 				0B4A617124A49B11007BC69A /* CircleImage.swift */,
 				0B4A616C24A49AFA007BC69A /* CustomButton.swift */,
 				0B4A616E24A49B06007BC69A /* CustomTextField.swift */,
@@ -164,7 +165,6 @@
 				0B1D8C9E24CAD79600E19CC0 /* LunchView.swift */,
 				0B1D8CA024CAD87700E19CC0 /* DinnerView.swift */,
 				0B1D8CA224CADB5100E19CC0 /* SelectionView.swift */,
-				0B754C0624ABB2B90028A6C3 /* ButtonWithCounter.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";

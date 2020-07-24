@@ -10,21 +10,25 @@ import SwiftUI
 
 struct MultipleSelectionList: View {
     
-    var items: [String] = ["Apples", "Pears", "Grapes"]
+    var items: [String]
     @State var selections: [String] = []
     
     var body: some View {
-        List {
-            ForEach(self.items, id: \.self) { item in
-                MultipleSelectionRow(title: item, isSelected: self.selections.contains(item)) {
-                    if self.selections.contains(item) {
-                        self.selections.removeAll(where: { $0 == item })
-                    }
-                    else {
-                        self.selections.append(item)
+        VStack {
+            List {
+                ForEach(self.items, id: \.self) { item in
+                    MultipleSelectionRow(title: item, isSelected: self.selections.contains(item)) {
+                        if self.selections.contains(item) {
+                            self.selections.removeAll(where: { $0 == item })
+                        }
+                        else {
+                            self.selections.append(item)
+                        }
                     }
                 }
             }
+            
+            
         }
     }
 }
@@ -33,7 +37,7 @@ struct MultipleSelectionList: View {
 struct MultipleSelectionRow_Previews: PreviewProvider {
         
     static var previews: some View {
-        MultipleSelectionList()
+        MultipleSelectionList(items: FoodIntake.Proteins.proteins)
     }
 }
 
