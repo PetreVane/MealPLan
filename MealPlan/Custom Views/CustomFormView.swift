@@ -17,29 +17,24 @@ struct CustomFormView: View {
     // Contains a list of posible day time
     private var listOfDayTimePeriods = ["Breakfast", "Lunch", "Dinner"]
     
-    
-    
     var body: some View {
-        NavigationView {
-            Form {
-                Section {
-                    Picker("Options", selection: $segmentedControllerIndex) {
-                        ForEach(listOfDayTimePeriods.indices, id:\.self) { dayTime in
-                            Text(listOfDayTimePeriods[dayTime]).tag(dayTime)
-                        }
-                    }.pickerStyle(SegmentedPickerStyle())
-                }
-                
-                Section {
-                    GenericScreen(timeOfDay: dayTime[listOfDayTimePeriods[segmentedControllerIndex]] ?? TimeOfDay.breakfast)
-                }
-                
-                Section  { }
-                
-            }.navigationBarTitle("Food Intake")
+        Form {
+            Section {
+                Picker("Options", selection: $segmentedControllerIndex) {
+                    ForEach(listOfDayTimePeriods.indices, id:\.self) { dayTime in
+                        Text(listOfDayTimePeriods[dayTime]).tag(dayTime)
+                    }
+                }.pickerStyle(SegmentedPickerStyle())
+            }
+            
+            Section {
+                let dayPeriod = listOfDayTimePeriods[segmentedControllerIndex]
+                GenericScreen(timeOfDay: dayTime[dayPeriod]!)
+            }
         }
     }
 }
+
 
 struct CustomSegmentedControl_Previews: PreviewProvider {
     static var previews: some View {
