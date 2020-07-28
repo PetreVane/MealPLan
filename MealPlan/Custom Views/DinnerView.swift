@@ -33,7 +33,7 @@ struct DinnerView: View {
             CustomButton(title: "Save dinner") {
                 print("Saving dinner details now ...")
             }.buttonStyle(CustomButtonStyle())
-        }
+        }.padding(.bottom)
     }
     
     func getDictionaryKeys(_ dictionary: Dictionary<String, Bool>) -> [String] {

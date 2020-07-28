@@ -30,6 +30,7 @@
 		0B4A618124A49B3B007BC69A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A618024A49B3B007BC69A /* AppCoordinator.swift */; };
 		0B4A618324A4D080007BC69A /* DetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A618224A4D080007BC69A /* DetailedView.swift */; };
 		0B4A618524A4DB29007BC69A /* CustomText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4A618424A4DB29007BC69A /* CustomText.swift */; };
+		0B5CF7EE24CB3E81003B0CC7 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CF7ED24CB3E81003B0CC7 /* CustomPickerView.swift */; };
 		0B61242224C97E9600DCF6EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B61242124C97E9600DCF6EF /* User.swift */; };
 		0B6A8E1B24CAC3D9002F64F0 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6A8E1A24CAC3D9002F64F0 /* Helper.swift */; };
 		0B6A8E1D24CAD1B1002F64F0 /* FormExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6A8E1C24CAD1B1002F64F0 /* FormExample.swift */; };
@@ -67,6 +68,7 @@
 		0B4A618024A49B3B007BC69A /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		0B4A618224A4D080007BC69A /* DetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedView.swift; sourceTree = "<group>"; };
 		0B4A618424A4DB29007BC69A /* CustomText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomText.swift; sourceTree = "<group>"; };
+		0B5CF7ED24CB3E81003B0CC7 /* CustomPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		0B61242124C97E9600DCF6EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0B6A8E1A24CAC3D9002F64F0 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		0B6A8E1C24CAD1B1002F64F0 /* FormExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormExample.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				0B1D8C9E24CAD79600E19CC0 /* LunchView.swift */,
 				0B1D8CA024CAD87700E19CC0 /* DinnerView.swift */,
 				0B1D8CA224CADB5100E19CC0 /* SelectionView.swift */,
+				0B5CF7ED24CB3E81003B0CC7 /* CustomPickerView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				0BE023FF24AA423B00A535D5 /* BreakfastCoordinator.swift in Sources */,
 				0B754C0724ABB2B90028A6C3 /* ButtonWithCounter.swift in Sources */,
 				0B1D8CA124CAD87700E19CC0 /* DinnerView.swift in Sources */,
+				0B5CF7EE24CB3E81003B0CC7 /* CustomPickerView.swift in Sources */,
 				0B4A617224A49B11007BC69A /* GenericScreen.swift in Sources */,
 				0BE023F924AA40B700A535D5 /* FoodIntake.swift in Sources */,
 				0B61242224C97E9600DCF6EF /* User.swift in Sources */,

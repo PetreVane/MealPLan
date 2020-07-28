@@ -120,7 +120,7 @@ struct CustomVStackSubview: View {
                     .font(.system(size: 35, weight: .thin, design: .rounded))
                     .foregroundColor( isChecked ? .green : .black)
                 Text(rowName)
-                    .font(.custom(customFont, size: 25))
+                    .font(.custom(customFont, size: 20))
                     .fontWeight(.thin)
                 Spacer(minLength: 5)
                 

@@ -32,7 +32,7 @@ struct BreakfastView: View {
             CustomButton(title: "Save breakfast") {
                 print("Saving brakfast details now...")
             }.buttonStyle(CustomButtonStyle())
-        }
+        }.padding(.bottom)
 
     }
     
