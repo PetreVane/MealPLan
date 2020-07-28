@@ -103,19 +103,7 @@ struct MainSubView: View {
                 Spacer(minLength: 10)
                 
                 TopStackView()
-            
-                HStack {
-                    Button(action: {
-                            self.isSaved.toggle()
-                            print("Saving your height")}) {
-                        
-                        Image(systemName: isSaved ? "checkmark.rectangle.fill" : "checkmark.rectangle")
-                                .font(.system(size: 45))
-                                .foregroundColor(isSaved ? .green : .gray)
-                        
-                    }.buttonStyle(AdditionalButtonStyle())
-                }
-                
+
                 // Middle textView
                 Text("Your meal plan")
                     .font(.custom(customFont, size: 35))
