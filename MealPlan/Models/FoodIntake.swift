@@ -32,7 +32,7 @@ struct FoodIntake: Identifiable {
         var content: Dictionary<Int, [String]>
         
         // holds a selection of common protein sources
-        static let proteins = ["Yogurt", "Milk", "Eggs", "Cottage cheese", "Ricotta chese", "Unsweetened soy milk", "Unsweetened almond milk", "Unsweetened other nondairy milk (hemp,flax, etc)", "Tofu", "Hummus", "Soya granules", "Nuts (including nuts butter", "Seeds", "Fish", "Shrimps or other shellfish", "Tofu", "Tempeh", "Beans",  "Lentils", "Hummus", "Shelled edamame", "Veggie burger", "Soy nuts (or dry roasted edamame"]
+        static let proteins = ["Yogurt", "Milk", "Eggs", "Cottage cheese", "Ricotta chese", "Unsweetened soy milk", "Unsweetened almond milk", "Unsweetened other nondairy milk (hemp,flax, etc)", "Tofu", "Hummus", "Soya granules", "Nuts (including nuts butter)", "Seeds", "Fish", "Shrimps or other shellfish", "Tofu", "Tempeh", "Beans",  "Lentils", "Hummus", "Shelled edamame", "Veggie burger", "Soy nuts (or dry roasted edamame)"]
     }
     
     struct Grains {
@@ -43,7 +43,7 @@ struct FoodIntake: Identifiable {
         
         var content: Dictionary<Int, [String]>
         
-        static let grains = ["Pre-Cooked Hot", "Dry Cold or hot", "Potato", "Sweet potato", "Yam", "Rice", "Quinoa", "Millet", "Oatmeal", "Oat bran", "Cream of rice", "Shredded wheat", "Fiber one"]
+        static let grains = ["Pre-Cooked hot", "Dry cold or hot", "Potato", "Sweet potato", "Yam", "Rice", "Quinoa", "Millet", "Oatmeal", "Oat bran", "Cream of rice", "Shredded wheat", "Fiber one"]
     }
     
     struct Fruits {
@@ -66,7 +66,7 @@ struct FoodIntake: Identifiable {
         
         var content: Dictionary<Int, [String]>
         
-        static let vegetables = ["Lettuce", "Broccoli", "Green beans", "Brussel sprouts", "Mushrooms", "Eggplant", "Tomatoes", "Peppers", "Onions", "Carrots", "Zucchini", "Yellow squash", "Artichoke hearts", "Beets", "Spinach", "Kale", "Swiss chard", "Colard greens", "Celery", "Bok choy", "Broccoli rabe", "Cabbage", "Dandelion greens", "Radicchio", "Jicama", "Watercress", "Turnip greens", "Beet greens", "Cucumber", "Tomatillo", "Cauliflower", "Snow peas", "Sugar snap peas", "Asparagus", "Garlic", "Spaghetti squash", "Leeks", "Radishes", "Peas", "Corn", "Parsnips", "Turnip/rutabaga/swede", "Winter squash (butternut, delicate, acorn, pumpkin", "Stir fry", "Mix"]
+        static let vegetables = ["Lettuce", "Broccoli", "Green beans", "Brussel sprouts", "Mushrooms", "Eggplant", "Tomatoes", "Peppers", "Onions", "Carrots", "Zucchini", "Yellow squash", "Artichoke hearts", "Beets", "Spinach", "Kale", "Swiss chard", "Colard greens", "Celery", "Bok choy", "Broccoli rabe", "Cabbage", "Dandelion greens", "Radicchio", "Jicama", "Watercress", "Turnip greens", "Beet greens", "Cucumber", "Tomatillo", "Cauliflower", "Snow peas", "Sugar snap peas", "Asparagus", "Garlic", "Spaghetti squash", "Leeks", "Radishes", "Peas", "Corn", "Parsnips", "Turnip/rutabaga/swede", "Winter squash (butternut, delicate, acorn, pumpkin)", "Stir fry", "Mix"]
     }
     
     struct Fats {

@@ -126,7 +126,6 @@ struct CustomVStackSubview: View {
                 
             }
             .padding(.all, 10)
-//            .border(Color.black, width: 0.5)
         }
         .padding(.all, 15)
         .onTapGesture {
