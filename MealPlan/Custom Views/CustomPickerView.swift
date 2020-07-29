@@ -18,11 +18,11 @@ struct CustomPickerView: View {
     var body: some View {
         GeometryReader { geometry in
             HStack {
-                ForEach(0..<data.count) { index in
-                    Picker(data[index].0, selection: $selection[index]) {
-                        ForEach(0..<data[index].1.count) { row in
-                            Text(verbatim: data[index].1[row])
-                                .tag(data[index].1[row])
+                ForEach(0..<self.data.count) { index in
+                    Picker(self.data[index].0, selection: self.$selection[index]) {
+                        ForEach(0..<self.data[index].1.count) { row in
+                            Text(verbatim: self.data[index].1[row])
+                                .tag(self.data[index].1[row])
                         }
                     }
                     .pickerStyle(WheelPickerStyle())

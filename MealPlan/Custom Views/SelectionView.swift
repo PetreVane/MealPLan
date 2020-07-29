@@ -22,7 +22,7 @@ struct SelectionView: View {
                 if isShown {
                     Picker(selection: $segmentedControllerIndex, label: Text("Label")) {
                         ForEach(listOfDayTimePeriods.indices, id:\.self) { index in
-                            Text(listOfDayTimePeriods[index])
+                            Text(self.listOfDayTimePeriods[index])
                         }
                     }.pickerStyle(SegmentedPickerStyle())
                 } else {
