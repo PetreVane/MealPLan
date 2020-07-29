@@ -11,39 +11,41 @@ import SwiftUI
 // This is for trying things
 struct DetailedView: View {
     var body: some View {
-        VStack {
-            HeaderView() 
-            
-            HStack {
-                PricingView(title: "Basic", price: "$9", textColor: .white, bgColor: .purple)
-                ZStack {
-                    PricingView(title: "Pro", price: "$19", textColor: .black, bgColor: Color(red: 240/255, green: 240/255, blue: 240/255))
-                    Text("Best for designer")
-                        .padding(5)
-                        .background(Color.yellow)
-                        .foregroundColor(.gray)
-                        .offset(x: 0, y: 87)
-                }
-            }
-            .padding()
-            
+        ScrollView {
             VStack {
-                ZStack {
-                    PricingView(title: "Team", price: "$299", textColor: .white, bgColor: Color(red: 62/255, green: 63/255, blue: 70/255))
-                    
-                    Image(systemName: "wand.and.rays")
-                        .font(.title)
-                        .offset(x: 0, y: -70)
-                        .foregroundColor(.white)
-                    
-                    Text("Perfect for teams with 20 members")
-                        .padding(10)
-                        .background(Color.yellow)
-                        .foregroundColor(.white)
-                        .offset(x: 0, y: 90)
-                }
+                HeaderView()
                 
-            }.padding()
+                HStack {
+                    PricingView(title: "Basic", price: "$9", textColor: .white, bgColor: .purple)
+                    ZStack {
+                        PricingView(title: "Pro", price: "$19", textColor: .black, bgColor: Color(red: 240/255, green: 240/255, blue: 240/255))
+                        Text("Best for designer")
+                            .padding(5)
+                            .background(Color.yellow)
+                            .foregroundColor(.gray)
+                            .offset(x: 0, y: 87)
+                    }
+                }
+                .padding()
+                
+                VStack {
+                    ZStack {
+                        PricingView(title: "Team", price: "$299", textColor: .white, bgColor: Color(red: 62/255, green: 63/255, blue: 70/255))
+                        
+                        Image(systemName: "wand.and.rays")
+                            .font(.title)
+                            .offset(x: 0, y: -70)
+                            .foregroundColor(.white)
+                        
+                        Text("Perfect for teams with 20 members")
+                            .padding(10)
+                            .background(Color.yellow)
+                            .foregroundColor(.white)
+                            .offset(x: 0, y: 90)
+                    }
+                    
+                }.padding()
+            }
         }
     }
 }

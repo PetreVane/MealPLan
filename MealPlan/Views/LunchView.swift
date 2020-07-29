@@ -12,6 +12,8 @@ struct LunchView: View {
     
     @State private var testLunch = ["Proteins" : false, "Grains" : false, "Fruits" : false, "Vegetables" : false, "Fat" : false]
     @State private var isOn = false
+    var lunchEssentials = ["Proteins":FoodIntake.Proteins.proteins, "Grains": FoodIntake.Grains.grains, "Fruits": FoodIntake.Fruits.fruits, "Vegetables": FoodIntake.Vegetables.vegetables, "Fat": FoodIntake.Fats.fats]
+    
     
     var body: some View {
         VStack {
@@ -24,7 +26,7 @@ struct LunchView: View {
                         let lunchBinding = Binding(
                             get: { getDictionaryValue(testLunch, forKey: key)},
                             set: { updateDictionaryValues(testLunch, forKey: key, withValue: $0)})
-                        NavigationLink(destination: MultipleSelectionList(items: FoodIntake.Grains.grains)) {
+                        NavigationLink(destination: MultipleSelectionList(items: lunchEssentials[key]!)) {
                             CustomVStackSubview(rowName: lunchKeys[index], isChecked: lunchBinding)
                         }
                     }

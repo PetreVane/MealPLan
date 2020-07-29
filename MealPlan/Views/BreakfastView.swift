@@ -11,6 +11,7 @@ import SwiftUI
 struct BreakfastView: View {
     
    @State private var testBreakfast = ["Proteins": false, "Grains" : false, "Fruits" : false]
+    var breakfastEssentials = ["Proteins":FoodIntake.Proteins.proteins, "Grains": FoodIntake.Grains.grains, "Fruits": FoodIntake.Fruits.fruits]
     
     var body: some View {
         VStack {
@@ -23,7 +24,7 @@ struct BreakfastView: View {
                         let breakfastBinding = Binding(
                             get: { getDictionaryValue(testBreakfast, forKey: key) },
                             set: { updateDictionaryValues(testBreakfast, forKey: key, withValue: $0)})
-                        NavigationLink(destination: MultipleSelectionList(items: FoodIntake.Fruits.fruits)) {
+                        NavigationLink(destination: MultipleSelectionList(items: breakfastEssentials[key]!)) {
                             CustomVStackSubview(rowName: key, isChecked: breakfastBinding)
                         }
                     }
