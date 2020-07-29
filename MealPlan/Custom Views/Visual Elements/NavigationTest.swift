@@ -15,14 +15,13 @@ struct NavigationTest: View {
         let first = Restaurant(name: "Joe's Original")
         let restaurants = [first]
         
-        NavigationView {
+        return NavigationView {
             List(restaurants) { restaurant in
                 NavigationLink(destination: DetailView()) {
                     RestaurantRow(restaurant: restaurant)
                 }
                 
             }.navigationBarTitle(Text("Bar title"))
-    
         }
     }
 }
