@@ -22,15 +22,9 @@ struct CustomFormView: View {
             Section {
                 Picker("Options", selection: $segmentedControllerIndex) {
                     ForEach(listOfDayTimePeriods.indices, id:\.self) { dayTime in
-                        Text(listOfDayTimePeriods[dayTime]).tag(dayTime)
+                        Text(self.listOfDayTimePeriods[dayTime]).tag(dayTime)
                     }
                 }.pickerStyle(SegmentedPickerStyle())
-            }
-            
-            Section {
-             
-                let dayPeriod = listOfDayTimePeriods[segmentedControllerIndex]
-                GenericScreen(timeOfDay: dayTime[dayPeriod]!)
             }
         }
     }
