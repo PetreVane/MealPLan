@@ -11,13 +11,22 @@ import SwiftUI
 struct MultipleSelectionList: View {
     
     var items: [String]
-    @State var selections: [String] = []
+    
+    @State private var selections: [String] = []
+    @State private var selectedQuantity = 0
+    
+    @State private var data: [(String, [String])] = [
+        ("One", Array(0...9).map { "\($0)" }),
+        ("Two", Array(0...9).map { "\($0)" }),
+        ("Three", Array(0...9).map { "\($0)" })
+    ]
+    @State var selection: [String] = [0, 0, 0].map { "\($0)" }
     
     var body: some View {
         VStack {
             List {
                 ForEach(self.items, id: \.self) { item in
-                    MultipleSelectionRow(title: item, isSelected: self.selections.contains(item)) {
+                    MultipleSelectionRow(title: item, isSelected: selections.contains(item)) {
                         if self.selections.contains(item) {
                             self.selections.removeAll(where: { $0 == item })
                         }
@@ -27,8 +36,8 @@ struct MultipleSelectionList: View {
                     }
                 }
             }
-            
-            
+//            Text("You've selected \(selection)")
+            CustomPickerView(data: data, selection: $selection).frame(height: 300)
         }
     }
 }
