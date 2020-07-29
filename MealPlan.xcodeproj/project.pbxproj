@@ -111,6 +111,8 @@
 		0B2E624324C9EB6D0040500F /* Visual Elements */ = {
 			isa = PBXGroup;
 			children = (
+				0B1D8CA224CADB5100E19CC0 /* SelectionView.swift */,
+				0B0A79E524BDA95A003A622E /* CustomFormView.swift */,
 				0B754C0624ABB2B90028A6C3 /* ButtonWithCounter.swift */,
 				0B4A617124A49B11007BC69A /* CircleImage.swift */,
 				0B4A616C24A49AFA007BC69A /* CustomButton.swift */,
@@ -174,9 +176,7 @@
 			children = (
 				0B2E624324C9EB6D0040500F /* Visual Elements */,
 				0B4A617024A49B11007BC69A /* GenericScreen.swift */,
-				0B0A79E524BDA95A003A622E /* CustomFormView.swift */,
 				0BC1DE7D24BDD3BB0025AF85 /* MultipleSelectionRow.swift */,
-				0B1D8CA224CADB5100E19CC0 /* SelectionView.swift */,
 				0B5CF7ED24CB3E81003B0CC7 /* CustomPickerView.swift */,
 			);
 			path = "Custom Views";
