@@ -10,53 +10,55 @@ import SwiftUI
 
 struct LunchView: View {
     
-    @State private var testLunch = ["Proteins" : false, "Grains" : false, "Fruits" : false, "Vegetables" : false, "Fat" : false]
-    @State private var isOn = false
-    var lunchEssentials = ["Proteins":FoodIntake.Proteins.proteins, "Grains": FoodIntake.Grains.grains, "Fruits": FoodIntake.Fruits.fruits, "Vegetables": FoodIntake.Vegetables.vegetables, "Fat": FoodIntake.Fats.fats]
+    private var model = FoodEssentials()
+    private let elementsList = ["Proteins", "Grains", "Vegetables", "Fruits", "Fats"]
     
+    @State private var proteinsSaved = false
+    @State private var grainsSaved = false
+    @State private var fruitsSaved = false
+    @State private var vegetablesSaved = false
+    @State private var fatsSaved = false
     
     var body: some View {
+        
         VStack {
             NavigationView {
                 List {
-                    let lunchKeys = getDictionaryKeys(testLunch)
-                    ForEach(lunchKeys.indices, id: \.self) { index in
+                    ForEach(self.elementsList.indices) { index in
                         
-                        let key = lunchKeys[index]
-                        let lunchBinding = Binding(
-                            get: { getDictionaryValue(testLunch, forKey: key)},
-                            set: { updateDictionaryValues(testLunch, forKey: key, withValue: $0)})
-                        NavigationLink(destination: MultipleSelectionList(items: lunchEssentials[key]!)) {
-                            CustomVStackSubview(rowName: lunchKeys[index], isChecked: lunchBinding)
+                        if self.elementsList[index] == Nutrients.proteins {
+                            NavigationLink(destination: MultipleSelectionList(items: self.model.proteins, isItemSaved: self.$proteinsSaved)) {
+                                CustomVStackSubview(rowName: Nutrients.proteins, isChecked: self.$proteinsSaved)
+                            }
+                            
+                        }
+                        
+                        if self.elementsList[index] == Nutrients.grains {
+                            NavigationLink(destination: MultipleSelectionList(items: self.model.grains, isItemSaved: self.$grainsSaved)) {
+                                CustomVStackSubview(rowName: Nutrients.grains, isChecked: self.$grainsSaved)
+                            }
+                        }
+                        
+                        if self.elementsList[index] == Nutrients.fruits {
+                            NavigationLink(destination: MultipleSelectionList(items: self.model.fruits, isItemSaved: self.$fruitsSaved)) {
+                                CustomVStackSubview(rowName: Nutrients.fruits, isChecked: self.$fruitsSaved)
+                            }
+                        }
+                        
+                        if self.elementsList[index] == Nutrients.vegetables {
+                            NavigationLink(destination: MultipleSelectionList(items: self.model.vegetables, isItemSaved: self.$vegetablesSaved)) {
+                                CustomVStackSubview(rowName: Nutrients.vegetables, isChecked: self.$vegetablesSaved)
+                            }
+                        }
+                        
+                        if self.elementsList[index] == Nutrients.fats {
+                            NavigationLink(destination: MultipleSelectionList(items: self.model.fats, isItemSaved: self.$fatsSaved)) {
+                                CustomVStackSubview(rowName: Nutrients.fats, isChecked: self.$fatsSaved)
+                            }
                         }
                     }
-                }
+                }.listStyle(GroupedListStyle())
             }
-            CustomButton(title: "Save Lunch") {
-                print("Saving lunch details now ..")
-            }.buttonStyle(CustomButtonStyle())
-        }.padding(.bottom)
-    }
-    
-    func getDictionaryKeys(_ dictionary: Dictionary<String, Bool>) -> [String] {
-        var temp: [String] = []
-        for element in dictionary.keys {
-            temp.append(element)
-        }
-        return temp
-    }
-
-    func getDictionaryValue(_ dictionary: Dictionary<String, Bool>, forKey key: String) -> Bool {
-        return dictionary[key]!
-    }
-    
-    func updateDictionaryValues(_ dictionary: Dictionary<String, Bool>, forKey key: String, withValue value: Bool) {
-        var localDictCopy = dictionary
-        localDictCopy.updateValue(value, forKey: key)
-
-        switch dictionary {
-            case testLunch: testLunch = localDictCopy
-            default: print("Default case")
         }
     }
 }

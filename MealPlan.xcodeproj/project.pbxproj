@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B07DD9024D176280075D5DC /* FoodEssentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B07DD8F24D176280075D5DC /* FoodEssentials.swift */; };
+		0B07DD9224D1B9400075D5DC /* Nutrients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B07DD9124D1B9400075D5DC /* Nutrients.swift */; };
 		0B0A79E624BDA95A003A622E /* CustomFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0A79E524BDA95A003A622E /* CustomFormView.swift */; };
 		0B1D8C9F24CAD79600E19CC0 /* LunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1D8C9E24CAD79600E19CC0 /* LunchView.swift */; };
 		0B1D8CA124CAD87700E19CC0 /* DinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1D8CA024CAD87700E19CC0 /* DinnerView.swift */; };
@@ -39,12 +41,15 @@
 		0B754C0524AB71BC0028A6C3 /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B754C0424AB71BC0028A6C3 /* CustomButtonStyle.swift */; };
 		0B754C0724ABB2B90028A6C3 /* ButtonWithCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B754C0624ABB2B90028A6C3 /* ButtonWithCounter.swift */; };
 		0B878F9324BCAC4F001495B6 /* FoodIntakeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B878F9224BCAC4F001495B6 /* FoodIntakeController.swift */; };
+		0B94207224D14D9B009EA3B5 /* CustomPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94207124D14D9B009EA3B5 /* CustomPicker.swift */; };
 		0BC1DE7E24BDD3BB0025AF85 /* MultipleSelectionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1DE7D24BDD3BB0025AF85 /* MultipleSelectionRow.swift */; };
 		0BE023F924AA40B700A535D5 /* FoodIntake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE023F824AA40B700A535D5 /* FoodIntake.swift */; };
 		0BE023FF24AA423B00A535D5 /* BreakfastCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE023FE24AA423B00A535D5 /* BreakfastCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B07DD8F24D176280075D5DC /* FoodEssentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodEssentials.swift; sourceTree = "<group>"; };
+		0B07DD9124D1B9400075D5DC /* Nutrients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrients.swift; sourceTree = "<group>"; };
 		0B0A79E524BDA95A003A622E /* CustomFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFormView.swift; sourceTree = "<group>"; };
 		0B1D8C9E24CAD79600E19CC0 /* LunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchView.swift; sourceTree = "<group>"; };
 		0B1D8CA024CAD87700E19CC0 /* DinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinnerView.swift; sourceTree = "<group>"; };
@@ -79,6 +84,7 @@
 		0B754C0424AB71BC0028A6C3 /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
 		0B754C0624ABB2B90028A6C3 /* ButtonWithCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithCounter.swift; sourceTree = "<group>"; };
 		0B878F9224BCAC4F001495B6 /* FoodIntakeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodIntakeController.swift; sourceTree = "<group>"; };
+		0B94207124D14D9B009EA3B5 /* CustomPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPicker.swift; sourceTree = "<group>"; };
 		0BC1DE7D24BDD3BB0025AF85 /* MultipleSelectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionRow.swift; sourceTree = "<group>"; };
 		0BE023F824AA40B700A535D5 /* FoodIntake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodIntake.swift; sourceTree = "<group>"; };
 		0BE023FE24AA423B00A535D5 /* BreakfastCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakfastCoordinator.swift; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 				0B6A8E1C24CAD1B1002F64F0 /* FormExample.swift */,
 				0B47873624D06F0400EDE032 /* SelectableList.swift */,
 				0B47873824D0700D00EDE032 /* ExampleView.swift */,
+				0B94207124D14D9B009EA3B5 /* CustomPicker.swift */,
 			);
 			path = "Visual Elements";
 			sourceTree = "<group>";
@@ -188,10 +195,10 @@
 			isa = PBXGroup;
 			children = (
 				0B4A617824A49B27007BC69A /* ChallengeScreen.swift */,
+				0B4A617724A49B27007BC69A /* MainScreen.swift */,
 				0B2E624424C9EFEB0040500F /* BreakfastView.swift */,
 				0B1D8C9E24CAD79600E19CC0 /* LunchView.swift */,
 				0B1D8CA024CAD87700E19CC0 /* DinnerView.swift */,
-				0B4A617724A49B27007BC69A /* MainScreen.swift */,
 				0B4A617624A49B27007BC69A /* LogOutScreen.swift */,
 				0B4A618224A4D080007BC69A /* DetailedView.swift */,
 			);
@@ -230,6 +237,8 @@
 				0BE023F824AA40B700A535D5 /* FoodIntake.swift */,
 				0B61242124C97E9600DCF6EF /* User.swift */,
 				0B2E623F24C9B08E0040500F /* DailyIntake.swift */,
+				0B07DD8F24D176280075D5DC /* FoodEssentials.swift */,
+				0B07DD9124D1B9400075D5DC /* Nutrients.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -305,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B07DD9024D176280075D5DC /* FoodEssentials.swift in Sources */,
 				0B4A617E24A49B27007BC69A /* ChallengeScreen.swift in Sources */,
 				0B4A617D24A49B27007BC69A /* MainScreen.swift in Sources */,
 				0B4A615724A49A31007BC69A /* MealPlan.xcdatamodeld in Sources */,
@@ -324,6 +334,7 @@
 				0B2E624524C9EFEB0040500F /* BreakfastView.swift in Sources */,
 				0B4A616F24A49B06007BC69A /* CustomTextField.swift in Sources */,
 				0BE023FF24AA423B00A535D5 /* BreakfastCoordinator.swift in Sources */,
+				0B94207224D14D9B009EA3B5 /* CustomPicker.swift in Sources */,
 				0B47873924D0700D00EDE032 /* ExampleView.swift in Sources */,
 				0B47873724D06F0400EDE032 /* SelectableList.swift in Sources */,
 				0B754C0724ABB2B90028A6C3 /* ButtonWithCounter.swift in Sources */,
@@ -337,6 +348,7 @@
 				0B2E624024C9B08E0040500F /* DailyIntake.swift in Sources */,
 				0B4A615424A49A31007BC69A /* SceneDelegate.swift in Sources */,
 				0B4A616D24A49AFA007BC69A /* CustomButton.swift in Sources */,
+				0B07DD9224D1B9400075D5DC /* Nutrients.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
