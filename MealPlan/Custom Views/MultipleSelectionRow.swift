@@ -12,37 +12,46 @@ struct MultipleSelectionList: View {
     
     var items: [String]
     
-    @State private var selections: [String] = []
+    @State private var nutrientSelections: [String] = []
     @State private var selectedQuantity = 0
     @Binding var isItemSaved: Bool
     
     @State private var data: [(String, [String])] = [
-        ("One", Array(0...9).map { "\($0)" }),
-        ("Two", Array(0...9).map { "\($0)" }),
-        ("Three", Array(0...9).map { "\($0)" })
+       
+        ("One", Array(0...499).map { "\($0)" }),
+        ("Two",  Array(arrayLiteral: "Select unit", "Oz", "Grams").map { "\($0)"}),
     ]
-    @State var selection: [String] = [0, 0, 0].map { "\($0)" }
+    @State var quantitySelection: [String] = [0, 0].map { "\($0)" }
     
     var body: some View {
         VStack {
             List {
                 ForEach(self.items, id: \.self) { item in
-                    MultipleSelectionRow(title: item, isSelected: self.selections.contains(item)) {
-                        if self.selections.contains(item) {
-                            self.selections.removeAll(where: { $0 == item })
+                    MultipleSelectionRow(title: item, isSelected: self.nutrientSelections.contains(item)) {
+                        if self.nutrientSelections.contains(item) {
+                            self.nutrientSelections.removeAll(where: { $0 == item })
                         }
                         else {
-                            self.selections.append(item)
+                            self.nutrientSelections.append(item)
                         }
-                    }
+                    }//.padding()
                 }
-            }.padding()
+            }
+           
+            Text("\(nutrientSelections.description)")
+                        
+            VStack {
+                CustomPickerView(data: data, selection: $quantitySelection).frame(height: 100).padding()
+            }
+            .background(Color(.systemGray6))
+            .cornerRadius(10)
+            .padding()
             
-            CustomPickerView(data: data, selection: $selection).frame(height: 100).padding()
             
             CustomButton(title: "Save selection"){
                 print("Saving brakfast details now...")
                 self.isItemSaved.toggle()
+                
             }.buttonStyle(CustomButtonStyle())
         }.padding(.bottom)
     }
