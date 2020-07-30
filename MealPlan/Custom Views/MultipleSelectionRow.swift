@@ -61,7 +61,7 @@ struct MultipleSelectionList: View {
 struct MultipleSelectionRow_Previews: PreviewProvider {
         
     static var previews: some View {
-        MultipleSelectionList(items: FoodIntake.Proteins.proteins, isItemSaved: .constant(false))
+        MultipleSelectionList(items: FoodEssentials.loadProteins(), isItemSaved: .constant(false))
     }
 }
 

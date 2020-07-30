@@ -11,14 +11,6 @@ import Foundation
 class FoodIntakeController {
     
     static var sharedInstance = FoodIntakeController()
-    var meals: [FoodIntake] = []
     
-    func add(_ foodIntake: FoodIntake) {
-        print("Adding food intake ...")
-        meals.append(foodIntake)
-    }
     
-    func checkStatus() {
-        print("Your current food intake accounts for \(meals.count) meals")
-    }
 }
