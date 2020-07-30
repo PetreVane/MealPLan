@@ -10,16 +10,4 @@ import Foundation
 
 struct BreakfastCoordinator {
     
-    var breakfast: FoodIntake
-    var breakfastRecords: [FoodIntake] = []
-    
-    init(breakfast: FoodIntake) {
-        self.breakfast = breakfast
-        updateBreakfastRecords(self.breakfast)
-    }
-    
-    mutating func updateBreakfastRecords(_ breakfast: FoodIntake) {
-        breakfastRecords.append(breakfast)
-        print("Breakfast has just been updated ...")
-    }
 }
